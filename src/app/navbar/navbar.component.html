@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span class="toolbar-logo">
+      <a>
+        <img src="assets/logo.png" alt="Logo" />
+      </a>
+    </span>
+
+    <span class="toolbar-links">
+      <button mat-button>Home</button>
+      <button mat-button class="services-button" [matMenuTriggerFor]="servicesMenu" [ngClass]="{'active': isServicesActive}" (click)="toggleServices()">
+        Services
+        <mat-icon class="dropdown-icon">keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #servicesMenu="matMenu" class="services-dropdown">
+        <button mat-menu-item class="service-item" >
+          <mat-icon class="small-icon">school</mat-icon>
+          Licences
+        </button>
+        <button mat-menu-item class="service-item" >
+          <mat-icon class="small-icon">check_circle</mat-icon>
+          Master
+        </button>
+      </mat-menu>
+      <button mat-button>Contact</button>
+    </span>
+
+    <span class="spacer"></span>
+
+    <button mat-button class="client-button">Espace Client</button>
+  </mat-toolbar-row>
+</mat-toolbar>

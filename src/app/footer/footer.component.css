@@ -1,0 +1,41 @@
+.footer {
+    background-color: #404040;
+    padding: 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-title {
+    color: #777777;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+.contact-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-icon {
+    font-size: 20px;
+    color: #cccccc;
+    margin-right: 10px;
+}
+
+.contact-text {
+    color: #cccccc;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+}
