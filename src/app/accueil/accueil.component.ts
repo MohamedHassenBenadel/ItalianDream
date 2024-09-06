@@ -1,4 +1,4 @@
-import { Component, HostListener, AfterViewInit } from '@angular/core';
+import { Component, HostListener, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-accueil',
@@ -6,14 +6,60 @@ import { Component, HostListener, AfterViewInit } from '@angular/core';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements AfterViewInit {
+  @ViewChild('counterSection', { static: true }) counterSection!: ElementRef;
+
   showNewContent: boolean = false;
 
+  experienceCount: number = 0;
+  experienceTarget: number = 10; // Replace this with the years of experience
+  experienceDuration: number = 1000; // in milliseconds
   
+  clientsCount: number = 0;
+  clientsTarget: number = 150; // Replace this with the number of clients
+  clientsDuration: number = 1000; // in milliseconds
+
+  private hasStartedCounting: boolean = false;
+
   ngAfterViewInit(): void {
-    this.checkVisibility();
-    window.addEventListener('scroll', this.checkVisibility.bind(this));
+    this.observeCounterSection();
   }
-  
+
+  observeCounterSection() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !this.hasStartedCounting) {
+          this.hasStartedCounting = true;
+          this.animateCounter('experience');
+          this.animateCounter('clients');
+          observer.disconnect(); // Stop observing once the counters start
+        }
+      });
+    });
+
+    observer.observe(this.counterSection.nativeElement); // Observe the section with the counters
+  }
+
+  animateCounter(type: 'experience' | 'clients') {
+    const startTime = performance.now();
+    const duration = type === 'experience' ? this.experienceDuration : this.clientsDuration;
+    const target = type === 'experience' ? this.experienceTarget : this.clientsTarget;
+    const endTime = startTime + duration;
+
+    const step = (timestamp: number) => {
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      if (type === 'experience') {
+        this.experienceCount = Math.round(target * progress);
+      } else {
+        this.clientsCount = Math.round(target * progress);
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  }
 
   @HostListener('window:scroll', ['$event'])
   checkVisibility() {
@@ -58,11 +104,4 @@ export class AccueilComponent implements AfterViewInit {
       image.style.transform = `translate(${translateX}px, ${translateY}px)`;
     }
   }
-
-  handleImageClick() {
-    this.showNewContent = !this.showNewContent; // Toggle visibility
-}
-
-
-
 }

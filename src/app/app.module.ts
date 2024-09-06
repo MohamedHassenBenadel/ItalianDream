@@ -13,11 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CountUpModule } from 'ngx-countup';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccueilComponent } from './accueil/accueil.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent,
     NavbarComponent,
     AccueilComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent
     ],
   imports: [
     BrowserModule,
@@ -38,9 +42,10 @@ import { FooterComponent } from './footer/footer.component';
     MatCardModule,
     MatFormFieldModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CountUpModule
   ],
-  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

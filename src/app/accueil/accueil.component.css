@@ -137,13 +137,72 @@
     transform: translateY(0);
 }
 
+
+/*Counter*/
+
+.counter-main {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Center horizontally */
+    justify-content: space-evenly; /* Distribute space evenly between counters */
+}
+
+.counter {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack the circle and label vertically */
+    align-items: center; /* Center the content horizontally */
+    margin: 20px; /* Space between the counters */
+}
+
+.circle {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    background-color: #D91828;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle p {
+    font-size: 40px; /* Size for the number inside the circle */
+    color: white;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+    font-size: 45px; /* Adjust label text size */
+    font-family: 'Open Sans', sans-serif; /* Font family */
+    color: #07283c; /* Text color */
+    margin-top: 20px; /* Space between the circle and label */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .admission-process-container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    height: 500px;
+    height: 600px;
 }
 
 .base-image {
@@ -151,6 +210,9 @@
     height: auto;
     cursor: pointer;
     transition: transform 0.7s ease;
+    position: relative;
+    z-index: 1; /* The image starts on top */
+
 }
 
 .move-left {
@@ -168,7 +230,23 @@
     height: 100%;
     padding: 20px;
     background-color: white;
-    z-index: 1;
+    z-index: 2; /* Content layer above image */
+    display: flex; /* Make sure content can be laid out properly */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.admission-process-container:hover .base-image {
+    transform: translateX(-100%);
+    z-index: 0; /* Send image behind content */
+
+}
+
+.admission-process-container:hover .new-content {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 3; /* Bring content forward */
+    display: block; 
 }
 
 .new-content.slide-in {
@@ -191,6 +269,8 @@
     margin: 0 auto;
     width: 80%;
     gap: 50px;
+    z-index: 3; /* Ensure steps container is on top */
+
 }
 
 .column {
@@ -209,6 +289,7 @@
     height: auto;
     margin-bottom: 10px;
 }
+
 
 
 
