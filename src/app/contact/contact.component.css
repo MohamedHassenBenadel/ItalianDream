@@ -1,148 +1,168 @@
-body {
-    font-family: 'Open Sans', 'Helvetica', sans-serif;
-    margin: 0;
-    padding: 0;
+.all-contact {
+    background-color: #ffffff;
+    padding: 100px;
 }
 
-.Map {
-    background-color: #F2F2F2;
-    padding-top: 60px; /* Add padding to push content below the fixed navbar */
-
-}
-
-.Map iframe {
-    margin-bottom: 30px;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    background-color: #F2F2F2; /* Background color for the contact container */
-    padding: 20px;
+.contact-info-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Adjust the width and margin of the form container */
-.contact-form {
-    width: 65%; /* 2/3 width */
-    max-width: 700px; /* Limit max-width to prevent large fields */
-    padding: 20px;
-    margin-right: 30px; /* Slightly move form to the left */
+.contact-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-.contact-info {
-    width: 25%; /* 1/3 width */
-    padding: 20px;
-}
-
-.contact-form h3, .contact-info h3 {
-    font-size: 20px; /* Set font size */
-    line-height: 24px; /* Set line height */
-    font-family: 'Lovelo', sans-serif; /* Set font family */
-    letter-spacing: 2px; /* Set letter spacing */
-    font-weight: 400; /* Set font weight */
-    color: #2d2e32; /* Set text color */
-    margin-bottom: 20px; /* Set bottom margin */
-}
-
-.info-paragraph {
-    font-family: 'Merriweather', serif; /* Set font family */
-    letter-spacing: 0.5px; /* Set letter spacing */
-    font-size: 15px; /* Set font size */
-    line-height: 25px; /* Set line height */
-    font-weight: 400; /* Set font weight */
-    color: #2d2e32; /* Set text color */
+.contact-icon {
+    text-align: center;
+    width: 30%;
     margin-bottom: 20px;
 }
 
-.info-address, .info-email, .info-tel {
-    margin-bottom: 20px;
+.contact-icon i {
+    background: linear-gradient(90deg, #f87d7d, #a41c1e); /* Gradient background */
+    color: white; /* Icon color */
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-radius: 50%; /* Makes the icon circular */
+    padding: 20px; /* Adjust size of the circle */
+    display: inline-block; /* Ensures the icon remains centered within the circle */
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth transition */
+}
+
+.contact-icon:hover i {
+    transform: scale(1.2); /* Scale up the icon */
+    background: linear-gradient(135deg, #a41c1e, #be1e2d); /* Reverse gradient on hover */
+}
+
+.contact-icon h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: #1E1666;
+    margin-bottom: 5px;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.contact-icon p {
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
     color: #2d2e32;
-    font-family: 'Helvetica', serif; /* Set font family */
-    letter-spacing: 0.5px; /* Set letter spacing */
-    font-size: 15px; /* Set font size */
-    line-height: 25px; /* Set line height */
-    font-weight: 400; /* Set font weight */
+    margin: 0;
+    transition: color 0.3s ease; /* Smooth transition */
 }
 
-.info-address .bold, 
-.info-email .bold, 
-.info-tel .bold {
-    font-family: 'Open Sans';
-    font-weight: 700;
+.map-and-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
-.info-address i, .info-email i, .info-tel i {
-    color: #D91828; /* Set the color for icons */
-    margin-right: 10px;
-    font-size: 1.2rem;
+.map-container {
+    width: 50%;
+    padding-right: 10px;
 }
 
-.info-email, .info-tel {
-    font-weight: 400; /* Normal weight for email and phone numbers */
+.contact-form-container {
+    width: 50%;
+    padding-left: 10px;
 }
 
-.info-email a {
-    color: #be1e2d; /* Set the color for email */
-    text-decoration: none; /* Remove underline */
-    font-family: 'Helvetica', serif; /* Set font family */
+.contact-form-container h3 {
+    font-family: "Nunito";
+    font-size: 40px;
+    color: #1E1666;
+    line-height: 48px;
+    font-weight: 800;
+    padding-left: 25px;
+    margin-bottom: 30px;
+    margin-top: -5px;
 }
 
-.info-email a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-.phone-numbers {
-    display: block; /* Ensure phone numbers are displayed as block elements */
-}
-
-label {
-    font-family: 'Merriweather', serif; /* Set font family */
-    letter-spacing: 0.5px; /* Set letter spacing */
-    font-size: 15px; /* Set font size */
-    line-height: 28px; /* Set line height */
-    font-weight: 400; /* Set font weight */
-    color: #2d2e32; /* Ensure label text color matches your design */
-}
-
-input, textarea {
-    width: 100%; /* Ensure fields don't overflow */
-    max-width: 100%; /* Make sure input doesn't exceed its container */
-    padding: 10px;
+.contact-form-container p.info-paragraph {
+    padding-left: 30px;
+    font-family: "Nunito";
+    font-size: 17px;
+    color: #57647C;
     margin-bottom: 20px;
-    border: 2px solid #ddd; /* Border color for fields */
-    border-radius: 1px;
-    font-size: 1rem;
-    font-family: 'Merriweather', serif; /* Set font family */
-    letter-spacing: 0.5px; /* Set letter spacing */
-    line-height: 28px; /* Set line height */
-    font-weight: 400; /* Set font weight */
-    background-color: #F2F2F2; /* Background color for input fields and textareas */
-    cursor: text; /* Change cursor to text */
 }
 
-input:focus, textarea:focus {
+.contact-form-container form {
+    background-color: #ffffff;
+    padding: 25px;
+    text-align: left;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 0px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+    background-color: #f4f8ff;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
     border-color: #D91828;
     outline: none;
 }
 
-button.submit-button {
+.submit-button {
     background-color: #D91828;
     color: white;
-    padding: 8px 15px; /* Smaller button size */
+    padding: 8px 15px;
     border: none;
     border-radius: 1px;
-    cursor: pointer; /* Change cursor to pointer */
-    font-size: 0.9rem; /* Smaller font size */
-    width: auto; /* Adjust width to content */
-    display: inline-block; /* Align with content */
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: auto;
+    display: inline-block;
+    font-weight: bold;
 }
 
-button.submit-button:hover {
-    background-color: #C8102E; /* A better hover color */
+.submit-button:hover {
+    background-color: #C8102E;
 }
 
-.all-contact {
-    background-color: #F2F2F2;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .map-and-form {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .map-container,
+    .contact-form-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .map-container iframe {
+        height: 300px; /* Adjust the height of the map on smaller screens */
+    }
+
+    .contact-form-container {
+        padding: 20px 0;
+        text-align: center; /* Center the form on smaller screens */
+    }
+
+    .contact-form-container form {
+        text-align: center; /* Center the input elements */
+    }
+
+    .contact-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-icon {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
