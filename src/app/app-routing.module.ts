@@ -5,11 +5,13 @@ import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
-  {path:'accueil' , component:AccueilComponent},
-  {path:'contact' , component:ContactComponent}
-
-
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'contact', component: ContactComponent },
+  // Add a wildcard route for handling 404 pages
+  { path: '**', redirectTo: '/accueil' }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
