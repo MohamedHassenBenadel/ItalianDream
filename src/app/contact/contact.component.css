@@ -6,6 +6,8 @@ body {
 
 .Map {
     background-color: #F2F2F2;
+    padding-top: 60px; /* Add padding to push content below the fixed navbar */
+
 }
 
 .Map iframe {
