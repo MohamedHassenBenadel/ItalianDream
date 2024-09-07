@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+
 
 
 @Component({
@@ -9,9 +11,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent { 
   
-constructor(private router: Router) {}
-
 isServicesActive = false;
+currentRoute: string = '';
+
+
+constructor(private router: Router, private route: ActivatedRoute) {
+  this.router.events.pipe(
+    filter(event => event instanceof NavigationEnd)
+  ).subscribe(() => {
+    this.currentRoute = this.router.url;
+  });
+}
+
+isActive(route: string): boolean {
+  return this.currentRoute === route;
+}
+
 
   toggleServices() {
     this.isServicesActive = !this.isServicesActive;

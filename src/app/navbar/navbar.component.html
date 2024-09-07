@@ -7,22 +7,22 @@
     </span>
 
     <span class="toolbar-links">
-      <button mat-button (click)="redirectTo('/accueil')">Accueil</button>
-      <button mat-button class="services-button" [matMenuTriggerFor]="servicesMenu" [ngClass]="{'active': isServicesActive}" (click)="toggleServices()">
+      <button mat-button [ngClass]="{'active': isActive('/accueil')}" (click)="redirectTo('/accueil')">Accueil</button>
+      <button mat-button class="services-button" [matMenuTriggerFor]="servicesMenu" [ngClass]="{'active': isActive('/services')}" (click)="toggleServices()">
         Services
         <mat-icon class="dropdown-icon">keyboard_arrow_down</mat-icon>
       </button>
       <mat-menu #servicesMenu="matMenu" class="services-dropdown">
-        <button mat-menu-item class="service-item" >
+        <button mat-menu-item class="service-item" [ngClass]="{'selected': isActive('/services/licences')}">
           <mat-icon class="small-icon">school</mat-icon>
           Licences
         </button>
-        <button mat-menu-item class="service-item" >
+        <button mat-menu-item class="service-item" [ngClass]="{'selected': isActive('/services/master')}">
           <mat-icon class="small-icon">check_circle</mat-icon>
           Master
         </button>
       </mat-menu>
-      <button mat-button (click)="redirectTo('/contact')">Contact</button>
+      <button mat-button [ngClass]="{'active': isActive('/contact')}" (click)="redirectTo('/contact')">Contact</button>
     </span>
 
     <span class="spacer"></span>

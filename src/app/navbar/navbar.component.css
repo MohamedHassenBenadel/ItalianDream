@@ -1,3 +1,4 @@
+/* Toolbar styles */
 mat-toolbar {
   background-color: #fff;
   color: #2d2e32;
@@ -14,6 +15,7 @@ mat-toolbar-row {
   justify-content: space-between;
 }
 
+/* Logo styling */
 .toolbar-logo {
   width: 250px;
   height: 50px;
@@ -26,17 +28,19 @@ mat-toolbar-row {
   object-fit: contain;
 }
 
+/* Spacer between logo and buttons */
 .spacer {
   flex: 1;
 }
 
+/* Toolbar links and buttons */
 .toolbar-links {
   display: flex;
   gap: 20px;
   font-size: 12px;
   font-family: 'Poppins', sans-serif;
   position: relative;
-  margin-left: 18rem;
+  margin-left: 20.5rem;
 }
 
 .toolbar-links button {
@@ -51,16 +55,19 @@ mat-toolbar-row {
   align-items: center; /* Align icon and text vertically */
 }
 
+/* Button hover effect */
 .toolbar-links button:hover {
   background-color: #D91828;
   color: white;
 }
 
-.services-button.active {
+/* Active button styling */
+.toolbar-links button.active {
   background-color: #D91828; /* Highlight active button */
   color: white;
 }
 
+/* Client button */
 .client-button {
   background-color: #D91828;
   color: white !important;
@@ -73,15 +80,17 @@ mat-toolbar-row {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Client button hover effect */
 .client-button:hover {
   background-color: #d9534f;
 }
 
-/* Dropdown styling */
+/* Dropdown menu styling */
 .services-dropdown {
   width: 200px; /* Adjust width as needed */
 }
 
+/* Service items in dropdown */
 .service-item {
   display: flex;
   align-items: center; /* Vertically center text with icon */
@@ -94,17 +103,19 @@ mat-toolbar-row {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Dropdown item hover effect */
 .service-item:hover {
   background-color: #D91828 !important;
   color: white;
 }
 
+/* Selected dropdown item styling */
 .service-item.selected {
   background-color: #D91828 !important; /* Highlight selected item */
   color: white !important;
 }
 
-/* Smaller icons */
+/* Smaller icons in dropdown */
 .small-icon {
   font-size: 16px; /* Adjust size as needed */
   margin-right: 8px; /* Space between icon and text */
