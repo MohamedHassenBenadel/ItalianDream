@@ -1,6 +1,7 @@
 .all-contact {
     background-color: #ffffff;
-    padding: 100px;
+    padding-top:100px;
+    /*padding: 100px;*/
 }
 
 .contact-info-container {
@@ -61,7 +62,6 @@
 
 .map-container {
     width: 50%;
-    padding-right: 10px;
 }
 
 .contact-form-container {
@@ -140,6 +140,7 @@
 
     .map-container,
     .contact-form-container {
+        align-items: center;
         width: 100%;
     }
 
