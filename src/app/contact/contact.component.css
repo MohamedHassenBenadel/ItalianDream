@@ -137,18 +137,27 @@
         text-align: center;
     }
 
+
     .map-container,
     .contact-form-container {
         width: 100%;
-        padding: 0;
     }
 
     .map-container iframe {
         height: 300px; /* Adjust the height of the map on smaller screens */
     }
 
+
+    .contact-form-container h3 {
+        font-family: "Nunito";
+        font-size: 25px;
+        color: #1E1666;
+    }
+    
+    
+
     .contact-form-container {
-        padding: 20px 0;
+        /*padding: 20px 0;*/
         text-align: center; /* Center the form on smaller screens */
     }
 

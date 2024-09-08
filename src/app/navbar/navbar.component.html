@@ -1,32 +1,44 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <span class="toolbar-logo">
-      <a>
-        <img src="assets/logo.png" alt="Logo" />
-      </a>
-    </span>
+    <!-- Logo -->
+    <div class="toolbar-logo" (click)="redirectTo('/home')">
+      <img src="../../assets/logo.png" alt="Logo" />
+    </div>
 
-    <span class="toolbar-links">
-      <button mat-button [ngClass]="{'active': isActive('/accueil')}" (click)="redirectTo('/accueil')">Accueil</button>
-      <button mat-button class="services-button" [matMenuTriggerFor]="servicesMenu" [ngClass]="{'active': isActive('/services')}" (click)="toggleServices()">
-        Services
-        <mat-icon class="dropdown-icon">keyboard_arrow_down</mat-icon>
-      </button>
-      <mat-menu #servicesMenu="matMenu" class="services-dropdown">
-        <button mat-menu-item class="service-item" [ngClass]="{'selected': isActive('/services/licences')}">
-          <mat-icon class="small-icon">school</mat-icon>
-          Licences
-        </button>
-        <button mat-menu-item class="service-item" [ngClass]="{'selected': isActive('/services/master')}">
-          <mat-icon class="small-icon">check_circle</mat-icon>
-          Master
-        </button>
-      </mat-menu>
-      <button mat-button [ngClass]="{'active': isActive('/contact')}" (click)="redirectTo('/contact')">Contact</button>
-    </span>
+    <!-- Spacer between logo and buttons -->
+    <div class="spacer"></div>
 
-    <span class="spacer"></span>
+    <!-- Container for toolbar links aligned to the right -->
+    <div class="toolbar-right">
+      <!-- Links for larger screens -->
+      <div class="toolbar-links" [ngClass]="{'open': isMenuOpen}">
+        <button (click)="redirectTo('/accueil')" [ngClass]="{'active': isActive('/accueil')}">Home</button>
 
-    <button mat-button class="client-button">Espace Client</button>
+        <!-- Services button with dropdown -->
+        <div class="dropdown-container">
+          <button (click)="toggleServices()" [ngClass]="{'active': isActive('/services')}">
+            <mat-icon class="dropdown-icon">keyboard_arrow_down</mat-icon>
+            Services
+          </button>
+          <div class="services-dropdown" *ngIf="isServicesActive">
+            <button class="service-item" (click)="redirectTo('/service1')">
+              <mat-icon class="small-icon">school</mat-icon>
+              Licences
+            </button>
+            <button class="service-item" (click)="redirectTo('/service2')">
+              <mat-icon class="small-icon">check_circle</mat-icon>
+              Master
+            </button>
+          </div>
+        </div>
+
+        <button (click)="redirectTo('/contact')" [ngClass]="{'active': isActive('/contact')}">Contact</button>
+      </div>
+
+      <!-- Hamburger Icon for Mobile -->
+      <div class="hamburger-icon" (click)="toggleMenu()">
+        &#9776; <!-- Hamburger icon (Unicode character) -->
+      </div>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>

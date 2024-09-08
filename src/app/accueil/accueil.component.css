@@ -1,3 +1,4 @@
+/* Parallax Section */
 .parallax-wrapper {
     position: relative;
     width: 100%;
@@ -29,7 +30,7 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 262px; /* Fixed unit */
+    width: 262px;
     height: 67px;
     z-index: 1;
 }
@@ -45,6 +46,23 @@
     text-align: center;
 }
 
+.client-button {
+    position: absolute;
+    top: 80%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment */
+    z-index: 3; /* Ensure this is above other content */
+    background-color: #197330;
+    color: white;
+    padding: 16px 8px ;
+    border: 1px ;
+    font-size: 18px;
+
+
+  }
+
+
+/* Description Section */
 .description-container {
     background-color: #f4f4f4;
     padding: 40px 20px;
@@ -75,6 +93,7 @@
     margin: 0 auto;
 }
 
+/* Values Section */
 .values-container {
     display: flex;
     justify-content: space-between;
@@ -137,32 +156,30 @@
     transform: translateY(0);
 }
 
-
-/*Counter*/
-
+/* Counter Section */
 .counter-main {
     position: relative;
     width: 100%;
-    height: 400px; /* Adjust as needed */
+    height: 400px;
     overflow: hidden;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center; /* Center horizontally */
-    justify-content: space-evenly; /* Distribute space evenly between counters */
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .counter {
     text-align: center;
     display: flex;
-    flex-direction: column; /* Stack the circle and label vertically */
-    align-items: center; /* Center the content horizontally */
-    margin: 20px; /* Space between the counters */
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }
 
 .circle {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
+    width: 100px;
+    height: 100px;
     background-color: #D91828;
     border-radius: 50%;
     display: flex;
@@ -171,31 +188,20 @@
 }
 
 .circle p {
-    font-size: 40px; /* Size for the number inside the circle */
+    font-size: 40px;
     color: white;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
 .label {
-    font-size: 45px; /* Adjust label text size */
-    font-family: 'Open Sans', sans-serif; /* Font family */
-    color: #07283c; /* Text color */
-    margin-top: 20px; /* Space between the circle and label */
+    font-size: 45px;
+    font-family: 'Open Sans', sans-serif;
+    color: #07283c;
+    margin-top: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Admission Process Section */
 .admission-process-container {
     position: relative;
     display: flex;
@@ -211,8 +217,7 @@
     cursor: pointer;
     transition: transform 0.7s ease;
     position: relative;
-    z-index: 1; /* The image starts on top */
-
+    z-index: 1;
 }
 
 .move-left {
@@ -230,23 +235,23 @@
     height: 100%;
     padding: 20px;
     background-color: white;
-    z-index: 2; /* Content layer above image */
-    display: flex; /* Make sure content can be laid out properly */
+    z-index: 2;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .admission-process-container:hover .base-image {
     transform: translateX(-100%);
-    z-index: 0; /* Send image behind content */
-
+    z-index: 0;
 }
 
 .admission-process-container:hover .new-content {
     opacity: 1;
     transform: translateX(0);
-    z-index: 3; /* Bring content forward */
-    display: block; 
+    z-index: 3;
+    display: block;
 }
 
 .new-content.slide-in {
@@ -262,42 +267,7 @@
     text-align: center;
 }
 
-.admission-steps-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 auto;
-    width: 80%;
-    gap: 50px;
-    z-index: 3; /* Ensure steps container is on top */
-
-}
-
-.column {
-    flex: 1;
-}
-
-.step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.step-number {
-    width: 50px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-
-
-
-
-
-/* cards*/
-
-
+/* Cards Section */
 .cards-section {
     text-align: center;
     padding: 40px 20px;
@@ -308,14 +278,14 @@
     font-size: 3rem;
     font-family: 'Poppins', sans-serif;
     color: #2d2e32;
-    margin-bottom: 20px; /* Increased margin for better spacing */
+    margin-bottom: 20px;
     margin-top: 20px;
 }
 
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the cards */
+    justify-content: center;
     gap: 20px;
     padding: 0;
 }
@@ -329,16 +299,15 @@
     text-align: center;
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Added transition for smooth effect */
 }
 
 .card:hover {
-    transform: scale(1.05); /* Slightly scales up the card on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card-icon {
-    font-size: 50px; /* Adjust size as needed */
+    font-size: 50px;
     margin-top: 20px;
 }
 
@@ -357,17 +326,145 @@
 }
 
 .card-icon.check {
-    color: #00a859; /* Green color for the check icon */
+    color: #00a859;
 }
 
 .card-icon.checklist {
-    color: #007bff; /* Blue color for the checklist icon */
+    color: #007bff;
 }
 
 .card-icon.payment {
-    color: #ffc107; /* Yellow color for the payment icon */
+    color: #ffc107;
 }
 
 .card-icon.certificate {
-    color: #D91828; /* Red color for the certificate icon */
+    color: #D91828;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .parallax-wrapper {
+        height: 400px;
+    }
+
+    .parallax-image {
+        left: -20%;
+        top: -20%;
+        width: 140%;
+        height: 140%;
+    }
+
+    .overlay-image {
+        width: 200px;
+        height: 50px;
+    }
+
+    .subtext {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .description-container {
+        padding: 20px 10px;
+    }
+
+    .description-heading {
+        font-size: 2rem;
+    }
+
+    .description-text {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .values-container {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .values-left, .values-right {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .values-heading {
+        font-size: 2.5rem;
+    }
+
+    .values-list li {
+        font-size: 1rem;
+    }
+
+    .counter-main {
+        flex-direction: column;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .circle p {
+        font-size: 30px;
+    }
+
+    .label {
+        font-size: 30px;
+    }
+
+    .admission-process-container {
+        height: 700px;
+    }
+
+    .base-image {
+        height: 500px;
+    }
+
+    .new-content {
+        padding: 10px;
+    }
+
+    .processustitle {
+        font-size: 2rem;
+    }
+
+    .cards-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card {
+        width: 30%;
+        height:200px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design for Tablets */
+@media (min-width: 769px) and (max-width: 1220px) {
+    .cards-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card {
+        width: 40%;
+        height:150px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
+
