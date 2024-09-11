@@ -1,27 +1,87 @@
-import { Component, HostListener, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, HostListener,OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
-export class AccueilComponent implements AfterViewInit {
+export class AccueilComponent implements OnInit ,AfterViewInit {
   @ViewChild('counterSection', { static: true }) counterSection!: ElementRef;
 
   showNewContent: boolean = false;
 
   experienceCount: number = 0;
   experienceTarget: number = 10; // Replace this with the years of experience
-  experienceDuration: number = 1000; // in milliseconds
+  experienceDuration: number = 2000; // in milliseconds
   
   clientsCount: number = 0;
   clientsTarget: number = 150; // Replace this with the number of clients
-  clientsDuration: number = 1000; // in milliseconds
+  clientsDuration: number = 2000; // in milliseconds
+
+
 
   private hasStartedCounting: boolean = false;
 
+
+  @ViewChild('services') servicesElement!: ElementRef;
+  cards = [
+    { icon: '../../assets/servicesicons/documents.png', title: 'Documents' },
+    { icon: '../../assets/servicesicons/certificate.png', title: 'Certification' },
+    { icon: '../../assets/servicesicons/orientation.png', title: 'Orientation' },
+    { icon: '../../assets/servicesicons/visa.png', title: 'Visa' },
+    { icon: '../../assets/servicesicons/accompagnment.png', title: 'Accompagnment' }
+  ];
+
+
+  testimonials = [
+    {
+      name: 'Person 1',
+      image: '../../assets/person1.jpg',
+      text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam."'
+    },
+    {
+      name: 'Person 2',
+      image: '../../assets/person2.jpg',
+      text: '"Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper eleifend."'
+    },
+    {
+      name: 'Person 3',
+      image: '../../assets/person1.jpg',
+      text: '"Phasellus imperdiet nulla et felis imperdiet. Curabitur sit amet eleifend nisi. Duis vehicula tortor at dolor tincidunt."'
+    }
+  ];
+
+
+
+  ngOnInit() {}
+
+
+  startSliding() {
+    const servicesElement = this.servicesElement.nativeElement;
+    const cardWidth = servicesElement.querySelector('.servicecard').offsetWidth + 20; // Adjust for margin
+    const totalWidth = cardWidth * this.cards.length;
+
+    // Set initial width for the services container
+    servicesElement.style.width = `${totalWidth}px`;
+
+    // Use RxJS interval to handle the sliding animation
+    interval(3000).subscribe(() => {
+      servicesElement.style.transition = 'transform 0.5s ease-in-out';
+      servicesElement.style.transform = `translateX(-${cardWidth}px)`;
+
+      setTimeout(() => {
+        servicesElement.style.transition = 'none';
+        servicesElement.appendChild(servicesElement.firstElementChild);
+        servicesElement.style.transform = 'translateX(0)';
+      }, 500); // Match the transition time
+    });
+  }
+
+
   ngAfterViewInit(): void {
     this.observeCounterSection();
+    this.startSliding();
   }
 
   observeCounterSection() {
