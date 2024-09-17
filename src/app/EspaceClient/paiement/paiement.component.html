@@ -1,0 +1,54 @@
+<div class="table-container">
+    <h2 class="table-title">Paiement</h2>
+  
+    <table mat-table [dataSource]="tranches" class="mat-elevation-z8 styled-table">
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Numero de tranche </th>
+        <td mat-cell *matCellDef="let tranche"> {{ tranche.id }} </td>
+      </ng-container>
+  
+      <!-- Montant Column -->
+      <ng-container matColumnDef="montant">
+        <th mat-header-cell *matHeaderCellDef> Montant </th>
+        <td mat-cell *matCellDef="let tranche"> {{ tranche.montant }} Dt </td>
+      </ng-container>
+  
+      <!-- Montant Payé Column -->
+      <ng-container matColumnDef="montantPaye">
+        <th mat-header-cell *matHeaderCellDef> Montant payé  
+         </th>
+        <td mat-cell *matCellDef="let tranche"> {{ tranche.montantPaye }} Dt </td>
+      </ng-container>
+  
+      <!-- Montant Restant Column -->
+      <ng-container matColumnDef="montantRestant">
+        <th mat-header-cell *matHeaderCellDef> Montant restant  </th>
+        <td mat-cell *matCellDef="let tranche"> {{ tranche.montantRestant }} Dt </td>
+      </ng-container>
+  
+      <!-- Paid Column with Icons -->
+      <ng-container matColumnDef="paid">
+        <th mat-header-cell *matHeaderCellDef> Payé </th>
+        <td mat-cell *matCellDef="let tranche">
+          <mat-icon *ngIf="tranche.paid" class="green-tick">check_circle</mat-icon>
+          <mat-icon *ngIf="!tranche.paid" color="warn">cancel</mat-icon>
+        </td>
+      </ng-container>
+  
+      <!-- Header and Row Declarations -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+  
+    <!-- Summary Section -->
+    <div class="summary-container">
+      <div class="summary-label">Total Montant Payé:</div>
+      <div class="summary-value paye">{{ totalMontantPaye }} Dt</div>
+      <div class="summary-label">Total Montant Restant:</div>
+      <div class="summary-value restant">{{ totalMontantRestant }} Dt</div>
+    </div>
+  </div>
+  

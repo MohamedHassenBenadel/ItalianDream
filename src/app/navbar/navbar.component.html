@@ -29,10 +29,24 @@
               <mat-icon class="small-icon">check_circle</mat-icon>
               Master
             </button>
+
+
+            <button class="service-item" (click)="redirectTo('/service2')">
+              <mat-icon class="small-icon">local_hospital</mat-icon>
+              Medecine / IMAT (EN)
+            </button>
+
           </div>
         </div>
 
         <button (click)="redirectTo('/contact')" [ngClass]="{'active': isActive('/contact')}">Contact</button>
+
+
+        <button (click)="redirectTo('/feedback')" [ngClass]="{'active': isActive('/feedback')}">Feedback</button>
+
+
+        <button mat-raised-button class="button-login" (click)="redirectTo('/login')">Espace Client</button>
+
       </div>
 
       <!-- Hamburger Icon for Mobile -->

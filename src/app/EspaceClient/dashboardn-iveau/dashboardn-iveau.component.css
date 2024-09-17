@@ -1,0 +1,75 @@
+.mat-tab-group {
+  width: 100%;
+}
+
+.tab-content {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.nombre-de-seance, .date-du-test {
+  font-size: 1rem;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between the icon and the text */
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center; /* Center align the title */
+}
+
+.program-container {
+  display: flex;
+  align-items: center; /* Align icon and card vertically in the center */
+  margin-bottom: 16px; /* Space between each program item */
+}
+
+.program-container mat-icon {
+  margin-right: 12px; /* Space between the icon and the card */
+  font-size: 30px; /* Adjust the icon size */
+  color: #000; /* Icon color */
+}
+
+.program-card {
+  flex-grow: 1; /* Allow the card to take up remaining horizontal space */
+  background-color: #f5f5f5; /* Pale green background */
+  border: 1px solid #c8e6c9; /* Slightly darker green border */
+  border-left: 8px solid #D91828; /* Larger left border with specified color */
+  color: #1b5e20; /* Dark green text color */
+}
+
+
+.program-card-content {
+  padding: 16px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.program-card p {
+  margin: 0;
+}
+
+.level {
+  font-size: 1.1rem;
+  margin-right: 8px;
+}
+
+.active-level {
+  color: #197330; /* Active tab color */
+}
+
+.inactive-level {
+  color: gray; /* Inactive tab color */
+}
+
+

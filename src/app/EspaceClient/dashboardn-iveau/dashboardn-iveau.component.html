@@ -1,0 +1,168 @@
+<mat-tab-group (selectedTabChange)="onTabChange($event)">
+<!-- A1 Level Tab -->
+ 
+<mat-tab label="A1 Level" >
+    <ng-template mat-tab-label>
+      <span [ngClass]="{'active-level': activeTab === 'A1', 'inactive-level': activeTab !== 'A1'}">A1 Level</span>
+      <mat-icon *ngIf="isCompleted('A1')" [ngStyle]="{'color': activeTab === 'A1' ? '#197330' : 'gray'}">check_circle</mat-icon>
+    </ng-template>
+    <div class="tab-content">
+      <div class="header">
+        <p class="nombre-de-seance"><mat-icon>calendar_today</mat-icon> <strong>Nombre de séance:</strong> 30</p>
+        <p class="date-du-test"><mat-icon>event</mat-icon> <strong>Date du test:</strong> [Insert Date]</p>
+      </div>
+      <h3>Programme</h3>
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Basic Greetings:</strong> Learn how to greet and introduce yourself.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Simple Conversations:</strong> Practice basic dialogues about everyday topics, like ordering food or asking for directions.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Numbers and Dates: </strong> Understand and use numbers, days of the week, and months.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Repeat for other program cards -->
+    </div>
+  </mat-tab>
+  
+  <!-- A2 Level Tab -->
+  <mat-tab label="A2 Level">
+    <ng-template mat-tab-label>
+      <span [ngClass]="{'active-level': activeTab === 'A2', 'inactive-level': activeTab !== 'A2'}">A2 Level</span>
+      <mat-icon *ngIf="isCompleted('A2')" [ngStyle]="{'color': activeTab === 'A2' ? '#197330' : 'gray'}">check_circle</mat-icon>
+    </ng-template>
+    <div class="tab-content">
+      <div class="header">
+        <p class="nombre-de-seance"><mat-icon>calendar_today</mat-icon> <strong>Nombre de séance:</strong> 40</p>
+        <p class="date-du-test"><mat-icon>event</mat-icon> <strong>Date du test:</strong> [Insert Date]</p>
+      </div>
+      <h3>Programme</h3>
+
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Describing Daily Activities:</strong>Talk about your daily routine and hobbies. </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong> Shopping and Dining Out: </strong>Learn phrases for shopping and dining, including asking for prices and making requests.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Giving Directions:</strong> Practice giving and understanding directions in a city.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+
+    </div>
+  </mat-tab>
+
+  <!-- B1 Level Tab -->
+  <mat-tab label="B1 Level">
+    <ng-template mat-tab-label>
+      <span [ngClass]="{'active-level': activeTab === 'B1', 'inactive-level': activeTab !== 'B1'}">B1 Level</span>
+      <mat-icon *ngIf="isCompleted('B1')" [ngStyle]="{'color': activeTab === 'B1' ? '#197330' : 'gray'}">check_circle</mat-icon>
+    </ng-template>
+    <div class="tab-content">
+      <div class="header">
+        <p class="nombre-de-seance"><mat-icon>calendar_today</mat-icon> <strong>Nombre de séance:</strong> 30</p>
+        <p class="date-du-test"><mat-icon>event</mat-icon> <strong>Date du test:</strong> [Insert Date]</p>
+      </div>
+      <h3>Programme</h3>
+
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Travel and Transportation:</strong> Discuss travel plans, book tickets, and handle travel-related situations.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Past and Future Events:</strong> Use past and future tenses to describe events and plans.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Expressing Opinions:</strong> Learn how to express and justify your opinions on various topics.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+  </mat-tab>
+
+  <!-- B2 Level Tab -->
+  <mat-tab label="B2 Level">
+    <ng-template mat-tab-label>
+      <span [ngClass]="{'active-level': activeTab === 'B2', 'inactive-level': activeTab !== 'B2'}">B2 Level</span>
+      <mat-icon *ngIf="isCompleted('B2')" [ngStyle]="{'color': activeTab === 'B2' ? '#197330' : 'gray'}">check_circle</mat-icon>
+    </ng-template>
+    <div class="tab-content">
+      <div class="header">
+        <p class="nombre-de-seance"><mat-icon>calendar_today</mat-icon> <strong>Nombre de séance:</strong> 40</p>
+        <p class="date-du-test"><mat-icon>event</mat-icon> <strong>Date du test:</strong> [Insert Date]</p>
+      </div>
+      <h3>Programme</h3>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Debating and Discussing:</strong> Engage in discussions on complex subjects and present arguments.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Cultural Topics:</strong> Explore Italian culture, traditions, and current events.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="program-container">
+        <mat-card class="program-card">
+          <mat-card-content class="program-card-content">
+            <p><strong>Writing Formal Letters:</strong> Practice writing formal letters, emails, and reports.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
+    </div>
+  </mat-tab>
+</mat-tab-group>

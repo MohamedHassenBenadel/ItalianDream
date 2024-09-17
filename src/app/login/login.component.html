@@ -1,0 +1,31 @@
+<div class="parallax-wrapper">
+  <div class="parallax-container" (mousemove)="onMouseMove($event)">
+    <img src="../../assets/Banner.png" class="parallax-image" />
+    <img src="../../assets/Slogan.png" class="overlay-image" />
+  </div>
+
+  <div class="main">
+    <mat-card class="login-card">
+      <mat-card-content>
+        <h1 class="login-title">Connexion</h1>
+        <form class="login-form" autocomplete="off">
+          <mat-form-field appearance="fill">
+            <mat-label>Id Client</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input matInput autocomplete="off">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <mat-icon matPrefix>key</mat-icon>
+            <input matInput type="password" autocomplete="new-password">
+          </mat-form-field>
+
+          <button mat-raised-button class="button-login"(click)="redirectTo('/dashboard')">Se connecter</button>
+
+          <span class="forgot-password" >Mot de passe oublié?</span>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

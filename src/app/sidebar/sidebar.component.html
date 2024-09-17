@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <div class="sidebar-content">
+      <!-- Logo with new class for horizontal centering -->
+      <div class="center-logo">
+        <img src="assets/logo.png" alt="Logo" class="sidebar-logo">
+      </div>
+      <!-- Username -->
+      <span class="username">
+        <i class="fas fa-user"></i> Mohamed Hassen Benadel
+      </span>
+      <!-- Sidebar Items with Icons -->
+      <button mat-button class="sidebar-item" 
+              [ngClass]="{'active': isActiveRoute('/dashboard/niveau')}" 
+              (click)="redirectTo('/dashboard/niveau')"> 
+      <mat-icon>language</mat-icon> Niveau Italien 
+    </button>
+      <button mat-button 
+              class="sidebar-item" 
+              [ngClass]="{'active': isActiveRoute('/dashboard/documents')}"
+              (click)="redirectTo('/dashboard/documents')"> 
+        <mat-icon>description</mat-icon> Documents
+      </button>
+      <button mat-button 
+              class="sidebar-item" 
+              [ngClass]="{'active': isActiveRoute('/dashboard/paiement')}"
+              (click)="redirectTo('/dashboard/paiement')">
+        <mat-icon>payment</mat-icon> Paiement
+      </button>
+      <!-- Disconnect Button with Icon -->
+      <button mat-button class="disconnect-button"  (click)="redirectTo('/login')">
+        <mat-icon>logout</mat-icon> Disconnect
+      </button>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
