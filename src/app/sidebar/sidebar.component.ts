@@ -12,7 +12,8 @@ export class SidebarComponent {
   constructor(private router: Router) {}
 
   isActiveRoute(route: string): boolean {
-    return this.router.url === route;
+   // return this.router.url === route;
+   return this.router.url.startsWith(route);
   }
 
   redirectTo(route: string) {

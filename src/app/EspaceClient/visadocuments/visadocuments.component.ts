@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-visadocuments',
@@ -10,10 +11,15 @@ export class VisadocumentsComponent {
   displayedColumns: string[] = ['document', 'disponibility','deadline'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private location: Location) {}
 
   ngOnInit(): void {
   }
+
+  goBack(): void {
+    this.location.back();  // This will navigate to the previous page
+  }
+
 }
 
 const ELEMENT_DATA = [
