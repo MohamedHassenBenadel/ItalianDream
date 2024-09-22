@@ -224,14 +224,13 @@
     align-items: center;
     text-align: center;
     padding: 20px;
-    margin-top: 50px; /* Optional margin to give some space above the container */
+    margin-top: 20px; /* Optional margin to give some space above the container */
 }
 
 .feedback-heading {
     font-size: 36px;
     font-family: "Kumbh Sans", "sans-serif";
     color: #07283c; /* Or your desired color */
-    margin: 0;
 }
 
 .divider {

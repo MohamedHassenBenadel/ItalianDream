@@ -12,12 +12,12 @@ export class AccueilComponent implements OnInit ,AfterViewInit {
   showNewContent: boolean = false;
 
   experienceCount: number = 0;
-  experienceTarget: number = 10; // Replace this with the years of experience
-  experienceDuration: number = 2000; // in milliseconds
+  experienceTarget: number = 11; // Replace this with the years of experience
+  experienceDuration: number = 3000; // in milliseconds
   
   clientsCount: number = 0;
-  clientsTarget: number = 150; // Replace this with the number of clients
-  clientsDuration: number = 2000; // in milliseconds
+  clientsTarget: number = 6350; // Replace this with the number of clients
+  clientsDuration: number = 3000; // in milliseconds
 
 
 

@@ -1,30 +1,18 @@
-<div class="table-container">
-  <h2 class="table-title">Documents Nécessaire</h2>
-  <table mat-table [dataSource]="dataSource" class="styled-table">
+<h2 class="title">Les Documents Nécessaire</h2>
 
-    <!-- Document Column -->
-    <ng-container matColumnDef="document">
-      <th mat-header-cell *matHeaderCellDef> Document </th>
-      <td mat-cell *matCellDef="let element"> {{element.document}} </td>
-    </ng-container>
+<div class="cards-container">
+  <mat-card class="document-card card" (click)="navigateTo('Visa')">
+    <mat-card-title>Visa Documents</mat-card-title>
+    <mat-card-content>View all required visa-related documents.</mat-card-content>
+  </mat-card>
 
-    <!-- Disponibilité Column -->
-    <ng-container matColumnDef="disponibility">
-      <th mat-header-cell *matHeaderCellDef> Disponibilité </th>
-      <td mat-cell *matCellDef="let element">
-          <mat-icon *ngIf="element.disponibility === 'Available'" class="custom-check-icon">check_circle</mat-icon>
-          <mat-icon *ngIf="element.disponibility === 'Not Available'" color="warn">cancel</mat-icon>
-      </td>
-    </ng-container>
+  <mat-card class="document-card card" (click)="navigateTo('Incription')">
+    <mat-card-title>Incription Documents</mat-card-title>
+    <mat-card-content>View all required incription-related documents.</mat-card-content>
+  </mat-card>
 
-    <!-- Date Limite Column -->
-    <ng-container matColumnDef="deadline">
-      <th mat-header-cell *matHeaderCellDef> Date Limite </th>
-      <td mat-cell *matCellDef="let element"> {{element.deadline | date:'dd/MM/yyyy'}} </td>
-    </ng-container>
-
-    <!-- Define the columns to be displayed -->
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  <mat-card class="document-card card" (click)="navigateTo('Bourse')">
+    <mat-card-title>Bourse Documents</mat-card-title>
+    <mat-card-content>View all required bourse-related documents.</mat-card-content>
+  </mat-card>
 </div>

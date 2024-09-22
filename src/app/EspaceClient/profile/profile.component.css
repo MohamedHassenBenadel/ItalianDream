@@ -1,0 +1,139 @@
+/* Styling for the background image */
+.background img.bg-image {
+    height: 50px; /* Adjust as needed */
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Main profile container */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* User image in the middle */
+.user-image {
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px; /* Adjust size as needed */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    margin-bottom: 35px;
+}
+
+
+
+/* Two-column card layout */
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+/* Common styling for both cards */
+.card {
+    width: 45%;
+    background-color: #eaeaea; /* Light background for cards */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-weight: bold;
+    font-size: large;
+}
+
+/* Information section styling */
+.info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adding row separation */
+.info-row {
+    display: flex;
+    align-items: center; /* Align items vertically in the middle */
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+/* Password row specific styling */
+.password-row {
+    display: flex;
+    align-items: center; /* Align items vertically in the middle */
+    justify-content: space-between; /* Space out the label and text from the button */
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.password-row .info-text {
+    margin-right: auto; /* Push the link to the far right */
+}
+
+/* Labels styling */
+.label {
+    font-weight: bold;
+    color: #2d2e32;
+    text-align: left; /* Align labels to the left */
+    flex: 1; /* Allow labels to take up space on the left */
+}
+
+/* Information text styling */
+.info-text {
+    text-align: left; /* Align information text to the left */
+    flex: 2; /* Allow information text to take up more space */
+}
+
+/* Change password link */
+.change-password-link {
+    display: flex;
+    align-items: center; /* Align items vertically in the middle */
+    color: #197330;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+/* Hidden password change form */
+.hidden {
+    display: none;
+}
+
+
+
+.submit-password-btn {
+    background-color: #197330;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.submit-password-btn:hover {
+    background-color: #1b7832;
+}
+
+::ng-deep .mat-mdc-form-field {
+    flex: auto;
+    min-width: 0;
+    width: 400px;
+    height:50px; /* Adjust the width as needed */
+    position: relative;
+    box-sizing: border-box;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }

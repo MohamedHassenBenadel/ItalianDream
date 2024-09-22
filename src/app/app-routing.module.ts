@@ -8,6 +8,11 @@ import { DashboardnIveauComponent } from './EspaceClient/dashboardn-iveau/dashbo
 import { DocumentsComponent } from './EspaceClient/documents/documents.component';
 import { PaiementComponent } from './EspaceClient/paiement/paiement.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { ProfileComponent } from './EspaceClient/profile/profile.component';
+import { VisadocumentsComponent } from './EspaceClient/visadocuments/visadocuments.component';
+import { InscriptiondocumentsComponent } from './EspaceClient/inscriptiondocuments/inscriptiondocuments.component';
+import { BoursedocumentsComponent } from './EspaceClient/boursedocuments/boursedocuments.component';
+import { OrientationComponent } from './EspaceClient/orientation/orientation.component';
 
 
 const routes: Routes = [
@@ -23,7 +28,12 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard/niveau', pathMatch: 'full' } ,
       { path: 'niveau', component: DashboardnIveauComponent } ,
       { path: 'documents' , component:DocumentsComponent},
-      { path: 'paiement' , component:PaiementComponent}
+      { path: 'documents/Visa', component: VisadocumentsComponent },
+      { path: 'documents/Incription', component: InscriptiondocumentsComponent },
+      { path: 'documents/Bourse', component: BoursedocumentsComponent },  
+      { path: 'paiement' , component:PaiementComponent},
+      { path: 'profile' , component:ProfileComponent},
+      { path: 'orientation' , component:OrientationComponent}
     ]
   }
 ];

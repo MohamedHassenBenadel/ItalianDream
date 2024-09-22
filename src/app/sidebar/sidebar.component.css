@@ -14,7 +14,7 @@ mat-sidenav {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 16px;
+  /*padding: 16px;*/
   box-sizing: border-box;
   align-items: center; /* Center items horizontally */
   background-color: #f3f3f3;
@@ -49,7 +49,7 @@ mat-sidenav {
 }
 
 .sidebar-item {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 16px;
   width: 100%; /* Full width of the sidebar */
   text-align: left;

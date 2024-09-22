@@ -1,62 +1,39 @@
-.table-container {
-    width: 60%; /* Adjust as needed */
-    margin: 0 auto; /* Centers the container */
-    padding: 20px;
-    text-align: center;
+/* Title styling */
+.title {
+  font-size: 1.8rem; /* Adjust font size for the title */
+  color: #000; /* Title color */
+  text-align: center; /* Center the title horizontally */
+  margin-top: 32px; /* Add some space below the title */
 }
 
-.table-title {
-    margin-bottom: 20px;
-    font-size: 1.8rem; /* Adjust font size for the title */
-    color: #000; /* Title color */
+/* Container for the cards */
+.cards-container {
+  margin-top: -45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically centers the cards */
+  height: calc(100vh - 80px); /* Adjust height to account for title and spacing */
+  padding: 0 10%; /* Adds horizontal padding to avoid cards touching the edges */
 }
 
-.styled-table {
-    width: 100%;
-    border-collapse: collapse; /* Ensures borders are collapsed */
-    border: 1px solid #aaa; /* Outer border for the table */
+/* Individual card styling */
+.document-card {
+  width: 30%; /* Adjust the width of the cards */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Ensures title and content are stacked vertically */
+  justify-content: center; /* Vertically centers content inside each card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow effect */
+  height: 250px; /* Set a fixed height for consistent card size */
+  cursor: pointer;
+  background-color: #ebebeb !important;
+  position: relative; /* Ensures bottom border is positioned correctly */
+  border-left: 25px solid #D91828; /* Adds a huge bottom border */
+  transition: transform 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover */
 }
 
-.styled-table th, .styled-table td {
-    padding: 10px; /* Cell padding */
-    border-right: 1px solid #ddd; /* Border between columns */
-}
-
-.styled-table th {
-    background-color: #f2f2f2; /* Light gray background for headers */
-    color: #333; /* Text color for headers */
-}
-
-.styled-table td {
-    vertical-align: middle; /* Aligns text vertically in cells */
-}
-
-/* Specific styles for 'Disponibilité' column */
-.styled-table .mat-column-disponibility {
-    width: 150px; /* Adjust width for 'Disponibilité' column */
-    text-align: center; /* Center-align text in 'Disponibilité' column */
-}
-
-.styled-table .mat-column-disponibility th, .styled-table .mat-column-disponibility td {
-    text-align: center; /* Center-align header and content */
-}
-
-/* Remove the right border from the last column to avoid extra border on the right edge */
-.styled-table th:last-child, .styled-table td:last-child {
-    border-right: none;
-}
-
-.custom-check-icon {
-    color: #197330; /* Custom green color for the check circle */
-}
-
-
-/* Specific styles for 'Date Limite' column */
-.styled-table .mat-column-deadline {
-    width: 150px; /* Adjust width for 'Date Limite' column */
-    text-align: center; /* Center-align text in 'Date Limite' column */
-}
-
-.styled-table .mat-column-deadline th, .styled-table .mat-column-deadline td {
-    text-align: center; /* Center-align header and content */
+/* Hover effect on the cards */
+.document-card:hover {
+  transform: scale(1.2); /* Scales up the card on hover */
+  border-left: 10px solid #D91828; /* Slightly reduce border size on hover */
 }

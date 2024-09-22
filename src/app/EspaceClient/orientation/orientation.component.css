@@ -1,0 +1,65 @@
+/* Overall container styles */
+.universities-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Filter container styles */
+.filter-container {
+    margin: 20px 0;
+}
+
+/* Styles for the dropdown */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+/* Card container styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual card styles */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 0; /* Remove padding to eliminate white space */
+    width: 330px; /* Adjust width */
+    height: 300px; /* Set a specific height */
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Image styles */
+img {
+    width: 100%; /* Full width of the card */
+    height: 75%; /* Maintain aspect ratio */
+    max-height: 75%; /* Take up to 2/3 of the card height */
+    border-radius: 8px 8px 0 0; /* Rounded corners on top */
+}
+
+/* Title styles */
+.card h3 {
+    margin: 10px 0; /* Add some margin for spacing */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card {
+        width: 90%; /* Full width on small screens */
+        height: auto; /* Adjust height for smaller screens */
+    }
+}
