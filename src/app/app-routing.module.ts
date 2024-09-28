@@ -13,6 +13,9 @@ import { VisadocumentsComponent } from './EspaceClient/visadocuments/visadocumen
 import { InscriptiondocumentsComponent } from './EspaceClient/inscriptiondocuments/inscriptiondocuments.component';
 import { BoursedocumentsComponent } from './EspaceClient/boursedocuments/boursedocuments.component';
 import { OrientationComponent } from './EspaceClient/orientation/orientation.component';
+import { AdmindashboardComponent } from './Admin/admindashboard/admindashboard.component';
+import { AddclientComponent } from './Admin/addclient/addclient.component';
+import { ManagedoucmentsComponent } from './Admin/managedoucments/managedoucments.component';
 
 
 const routes: Routes = [
@@ -21,6 +24,13 @@ const routes: Routes = [
   { path: 'accueil', component: AccueilComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'contact', component: ContactComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'feedback', component: FeedbackComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
+
+  
+  {path:'admindashboard' , component:AdmindashboardComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+  {path:'ajouterclient' , component:AddclientComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+  {path:'documents' , component:ManagedoucmentsComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+
+  
   { 
     path: 'dashboard', 
     component: SidebarComponent,  

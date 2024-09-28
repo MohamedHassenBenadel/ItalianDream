@@ -1,0 +1,126 @@
+/* Ensure the container takes full viewport height */
+.admindashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+
+  }
+    .slogan-container {
+    margin-bottom: 40px;
+  }
+  
+  .slogan-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+
+  .management-phrase {
+    margin-top: 100px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    color: #333; /* You can change the color as needed */
+  }
+  
+  
+  /* Cards container should flex-grow to fill remaining space */
+  .cards-container {
+    margin-top: -150px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1; /* Allows the container to take up available space */
+    align-items: center; /* Vertically centers the cards within the container */
+  }
+  
+  /* Individual card styling */
+  .dashboard-card {
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the card */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #efefef; /* Default smooth background color */
+    border-radius: 8px ; /* Optional: Rounded corners for a modern look */
+  }
+  
+  .dashboard-card:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: #197330; /* Hover background color */
+    color: #ffffff; /* Change text color to white on hover */
+  }
+  
+  /* Card content styling */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Icon styling */
+  .card-icon {
+    color: #197330;
+    font-size: 25px; /* Increased icon size for better visibility */
+    color: inherit; /* Inherit color from parent (.dashboard-card) */
+    margin-bottom: 15px;
+  }
+  
+  /* Title styling */
+  .card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  /* Text styling */
+  .card-text {
+    font-size: 0.95em;
+    color: inherit; /* Inherit color from parent (.dashboard-card) */
+  }
+
+
+  /* Disconnect button styling */
+.disconnect-button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.disconnect-button {
+  background-color: #D91828; /* Button background color */
+  color: white !important; /* Button text color */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add spacing between icon and text */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.disconnect-button:hover {
+  background-color: #c9302c; /* Darker hover color */
+}
+
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .dashboard-card {
+      width: 90%;
+    }
+  }
+  

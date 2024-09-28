@@ -52,7 +52,11 @@ import { VisadocumentsComponent } from './EspaceClient/visadocuments/visadocumen
 import { InscriptiondocumentsComponent } from './EspaceClient/inscriptiondocuments/inscriptiondocuments.component';
 import { BoursedocumentsComponent } from './EspaceClient/boursedocuments/boursedocuments.component';
 import { OrientationComponent } from './EspaceClient/orientation/orientation.component';
+import { AdmindashboardComponent } from './Admin/admindashboard/admindashboard.component';
+import { AddclientComponent } from './Admin/addclient/addclient.component';
+import { ManagedoucmentsComponent } from './Admin/managedoucments/managedoucments.component';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -75,7 +79,10 @@ import { OrientationComponent } from './EspaceClient/orientation/orientation.com
     VisadocumentsComponent,
     InscriptiondocumentsComponent,
     BoursedocumentsComponent,
-    OrientationComponent
+    OrientationComponent,
+    AdmindashboardComponent,
+    AddclientComponent,
+    ManagedoucmentsComponent
     ],
   imports: [
     BrowserModule,
@@ -97,7 +104,9 @@ import { OrientationComponent } from './EspaceClient/orientation/orientation.com
     ReactiveFormsModule,
     MatTableModule,
     FormsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatPaginatorModule
+
     
     
   ],

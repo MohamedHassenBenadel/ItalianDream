@@ -137,3 +137,60 @@
     margin-right: 10px;
     margin-bottom: 20px;
   }
+
+
+
+  .password-modal {
+    height: auto;
+    padding: 20px;
+    height: 250px;
+    background: white; /* Background color of the modal */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.password-modal h2 {
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 24px; /* Title font size */
+    text-align: center; /* Center the title */
+}
+
+::ng-deep .mat-mdc-form-field {
+    margin-top: 10px;
+    width: 100% ; 
+    margin-bottom: 16px; 
+}
+
+.modal-actions {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: space-between; /* Space between buttons */
+}
+
+.submit-password-btn {
+    flex-grow: 1; /* Allow the submit button to take available space */
+    margin-right: 10px; /* Space between buttons */
+}
+
+::ng-deep .mat-button {
+    background-color: #197330 ;
+    flex-grow: 1; /* Allow the cancel button to take available space */
+}
+
+::ng-deep .submit-button {
+    background-color: #197330 !important; /* Green background */
+    color: white !important; /* White text color */
+    border: none; /* Remove border if needed */
+}
+
+::ng-deep .submit-button:disabled {
+    background-color: #a5d6a7 !important; /* Optional: lighter color for disabled state */
+    color: rgba(255, 255, 255, 0.7) !important; /* Optional: lighter text color for disabled state */
+}
+
+
+/* Ensuring the modal content does not overflow */
+.password-modal form {
+    overflow: hidden; /* Prevent overflow of the form */
+}

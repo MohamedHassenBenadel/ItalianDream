@@ -32,6 +32,12 @@
                     <span class="label">Orientation:</span>
                     <span class="info-text">Software Engineering</span>
                 </div>
+
+                <div class="info-row">
+                    <span class="label">Email:</span>
+                    <span class="info-text">HassenBenadel&#64;gmail.com</span>
+                </div>
+
             </div>
         </div>
 
@@ -43,30 +49,39 @@
                     <span class="label">Client ID:</span>
                     <span class="info-text">213JMt88893</span>
                 </div>
+
+                <!-- Trigger to open the modal -->
                 <div class="info-row password-row">
                     <span class="label">Password:</span>
                     <span class="info-text">
-                        <a class="change-password-link" (click)="toggleChangePassword()">Modifier votre mot de passe</a>
+                        <a class="change-password-link" (click)="openPasswordChangeModal()">Modifier votre mot de passe</a>
                     </span>
                 </div>
             </div>
-
-            <!-- Password change form using Angular Material -->
-            <div id="change-password-form" class="hidden">
-                <form [formGroup]="passwordForm" (ngSubmit)="submitNewPassword()">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Nouveau mot de passe</mat-label>
-                        <input matInput type="password" formControlName="newPassword"  required>
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline">
-                        <mat-label>Confirmer le nouveau mot de passe</mat-label>
-                        <input matInput type="password" formControlName="confirmPassword"  required>
-                    </mat-form-field>
-            
-                    <button mat-raised-button color="primary" type="submit" [disabled]="passwordForm.invalid" class="submit-password-btn">Submit</button>
-                </form>
-            </div>
-                    </div>
+        </div>
     </div>
 </div>
+
+<!-- Password Change Modal -->
+<ng-template #ChangePasswordDialog let-dialogRef="dialogRef">
+    <div class="password-modal">
+        <h2>Modifier votre mot de passe</h2>
+        <form [formGroup]="passwordForm" (ngSubmit)="submitNewPassword()">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nouveau mot de passe</mat-label>
+                <input matInput type="password" formControlName="newPassword" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Confirmer votre nouveau mot de passe</mat-label>
+                <input matInput type="password" formControlName="confirmPassword" required>
+            </mat-form-field>
+
+            <div class="modal-actions">
+                <button mat-raised-button type="submit" [disabled]="passwordForm.invalid" class="submit-button">Modifier</button>
+                <button mat-button type="button" (click)="dialogRef.close()">Annuler</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+    

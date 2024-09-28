@@ -163,17 +163,6 @@
     overflow: hidden; /* Ensure the content does not overflow */
 }
 
-.header {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    font-family: "Kumbh Sans", "sans-serif";
-    color: #fff;
-    text-align: center;
-}
-
 .content {
     display: flex;
     flex-direction: column; /* Stack counters vertically if needed */
@@ -263,7 +252,7 @@
     font-size: 50px; /* Adjust size as needed */
     color: #ffffff; /* White color */
     position: absolute;
-    top: 0px; /* Position above the card */
+    top: 20px; /* Position above the card */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
     opacity: 0.9; /* Slight transparency */
@@ -360,7 +349,7 @@
 
     .servicecard {
         min-width: 150px; /* Make cards full width for mobile view */
-        padding: 5px 5px; /* Adjust padding as needed */
+        padding: 4px 4px; /* Adjust padding as needed */
 
     }
 
@@ -378,32 +367,21 @@
         font-size: 0.9rem; /* Reduce font size for mobile */
     }
 
-    .counter-main {
-        height: 350; /* Allow height to adjust automatically */
-    }
 
-    .header {
-        left: 25%; 
-        top: 10%;
-        font-size: 25px; /* Reduce font size for mobile */
-    }
-
-    .content {
-        flex-direction: row; /* Stack counters vertically on mobile */
-        align-items: center;
-        margin-top: 80px;
-    }
-
+    /*Counter Section*/
     .counters {
-        flex-direction: row; /* Stack counters vertically on mobile */
-        align-items: center;
+        flex-direction: column; /* Stack counters vertically */
+        gap: 20px; /* Adjust the gap between stacked counters */
     }
 
-    .counter {
-        margin-right: 0; /* Remove margin for vertical stacking */
-        margin-bottom: 20px; /* Add margin between counters */
+    .counter-main {
+        height: auto; /* Adjust height to fit content */
+        padding: 20px 0; /* Add some padding for mobile view */
     }
 
+
+
+    /*FeedBack section*/
     .feedback-container {
         padding: 20px; /* Adjust padding for smaller screens */
     }

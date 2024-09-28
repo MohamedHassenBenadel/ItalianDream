@@ -1,0 +1,61 @@
+<div class="admindashboard-container">
+    <!-- Slogan Image -->
+    <div class="slogan-container">
+      <img src="../../../assets/Slogan.png" alt="Slogan de l'agence" class="slogan-image" />
+    </div>
+
+
+    <div class="management-phrase">
+      <p>Accédez aux fonctionnalités principales pour simplifier la gestion de votre agence</p>
+    </div>  
+
+    
+  
+    <!-- Cards Section -->
+    <div class="cards-container">
+      <!-- Ajouter Client Card -->
+      <mat-card class="dashboard-card" routerLink="/ajouterclient">
+        <mat-card-content class="card-content">
+          <mat-icon class="card-icon">person_add</mat-icon>
+          <h2 class="card-title">Ajouter Client</h2>
+          <p class="card-text">Créer un nouveau compte client pour l'agence.</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Gérer les documents Card -->
+      <mat-card class="dashboard-card" routerLink="/documents">
+        <mat-card-content class="card-content">
+          <mat-icon class="card-icon">folder</mat-icon>
+          <h2 class="card-title">Gérer les documents</h2>
+          <p class="card-text">Organisez et gérez les documents des clients.</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Paiement Card -->
+      <mat-card class="dashboard-card" routerLink="/payments">
+        <mat-card-content class="card-content">
+          <mat-icon class="card-icon">payment</mat-icon>
+          <h2 class="card-title">Paiement</h2>
+          <p class="card-text">Gérez les paiements et les transactions financières.</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Accès Client Card -->
+      <mat-card class="dashboard-card" routerLink="/client-access">
+        <mat-card-content class="card-content">
+          <mat-icon class="card-icon">vpn_key</mat-icon>
+          <h2 class="card-title">Accès Client</h2>
+          <p class="card-text">Contrôlez l'accès et les permissions des clients.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+    <div class="disconnect-button-container">
+      <button mat-button class="disconnect-button" routerLink="/logout">
+        <mat-icon>logout</mat-icon>
+        Déconnexion
+      </button>
+  
+  </div>
+  

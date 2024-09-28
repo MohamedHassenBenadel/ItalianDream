@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  @ViewChild('ChangePasswordDialog') changePasswordDialog!: TemplateRef<any>;
 
-  showChangePasswordForm: boolean = false;
   passwordForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private dialog: MatDialog) {
     this.passwordForm = this.fb.group({
       newPassword: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required]]
@@ -22,19 +23,16 @@ export class ProfileComponent {
     return formGroup.get('newPassword')?.value === formGroup.get('confirmPassword')?.value ? null : { mismatch: true };
   }
 
-
-
-  toggleChangePassword() {
-    this.showChangePasswordForm = !this.showChangePasswordForm;
-    const passwordForm = document.getElementById('change-password-form');
-    if (passwordForm) {
-      passwordForm.style.display = this.showChangePasswordForm ? 'block' : 'none';
-    }
+  openPasswordChangeModal() {
+    this.dialog.open(this.changePasswordDialog, {
+      width: '400px'
+    });
   }
 
   submitNewPassword() {
-    
+    if (this.passwordForm.valid) {
+      console.log(this.passwordForm.value);
+      this.dialog.closeAll(); // Close the modal after submission
+    }
   }
-
-
 }
