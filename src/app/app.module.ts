@@ -58,7 +58,9 @@ import { ManagedoucmentsComponent } from './Admin/managedoucments/managedoucment
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ClientaccessComponent } from './Admin/clientaccess/clientaccess.component';
 
 
 
@@ -82,7 +84,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     OrientationComponent,
     AdmindashboardComponent,
     AddclientComponent,
-    ManagedoucmentsComponent
+    ManagedoucmentsComponent,
+    ClientaccessComponent
     ],
   imports: [
     BrowserModule,
@@ -105,10 +108,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     FormsModule,
     MatStepperModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatCheckboxModule
 
-    
-    
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 
   bootstrap: [AppComponent], providers: [provideAnimationsAsync()]

@@ -16,6 +16,7 @@ import { OrientationComponent } from './EspaceClient/orientation/orientation.com
 import { AdmindashboardComponent } from './Admin/admindashboard/admindashboard.component';
 import { AddclientComponent } from './Admin/addclient/addclient.component';
 import { ManagedoucmentsComponent } from './Admin/managedoucments/managedoucments.component';
+import { ClientaccessComponent } from './Admin/clientaccess/clientaccess.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'admindashboard' , component:AdmindashboardComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
   {path:'ajouterclient' , component:AddclientComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
   {path:'documents' , component:ManagedoucmentsComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+  {path:'access' , component:ClientaccessComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
 
   
   { 

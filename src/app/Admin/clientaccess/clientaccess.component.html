@@ -1,0 +1,68 @@
+<div class="back-button-container">
+    <button mat-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon> Back
+    </button>
+</div>
+
+<div class="user-table-container">
+    <h2 class="table-title">Client Access</h2>
+
+    <mat-form-field appearance="fill" class="search-bar">
+      <mat-label>Search User</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search for users">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let user"> {{ user.firstName }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let user"> {{ user.lastName }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cin">
+        <th mat-header-cell *matHeaderCellDef> CIN </th>
+        <td mat-cell *matCellDef="let user"> {{ user.cin }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let user"> {{ user.email }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="clientId">
+        <th mat-header-cell *matHeaderCellDef> Client ID </th>
+        <td mat-cell *matCellDef="let user"> {{ user.clientId }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let user">
+          <button mat-button (click)="isConfirming = true; selectedUser = user"
+                  [ngStyle]="{'background-color': user.isBanned ? '#197330' : '#c8102e', 'color': '#fff'}">
+            {{ user.isBanned ? 'Unban' : 'Ban' }}
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+<!-- Confirmation Dialog -->
+<div *ngIf="isConfirming" class="confirmation-dialog">
+    <h3 class="dialog-title">Confirm Action</h3>
+    <p>Are you sure you want to {{ selectedUser?.isBanned ? 'unban' : 'ban' }} {{ selectedUser?.firstName }} {{ selectedUser?.lastName }}?</p>
+    
+    <div class="button-container">
+      <button mat-button class="cancel-button" (click)="isConfirming = false">No</button>
+      <button mat-button class="confirm-button" (click)="banUser(selectedUser!); isConfirming = false" color="primary">Yes</button>
+    </div>
+  </div>
+  

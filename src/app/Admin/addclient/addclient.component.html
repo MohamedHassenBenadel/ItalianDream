@@ -1,24 +1,25 @@
-<div class="back-button-container">
-    <button mat-button (click)="goBack()">
-      <mat-icon>arrow_back</mat-icon> Back
-    </button>
-  </div>
-  
+ 
+<div class="addclient-section">
+    <div class="back-button-container">
+        <button mat-button (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon> Back
+        </button>
+    </div>
 
-  <div class="add-client-container">
+<div class="add-client-container">
     <mat-card>
         <mat-card-title class="form-title">Ajouter un Client</mat-card-title>
-        <mat-card-content>
-            <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
                 <!-- Prénom and Nom de famille in the same line -->
-                <div class="name-container">
-                    <mat-form-field appearance="outline" class="full-width">
-                        <mat-label>Prénom</mat-label>
-                        <input matInput formControlName="firstName" required>
-                        <mat-error *ngIf="clientForm.get('firstName')?.hasError('required')">
+                    <div class="name-container">
+                            <mat-form-field appearance="outline" class="full-width">
+                            <mat-label>Prénom</mat-label>
+                            <input matInput formControlName="firstName" required>
+                            <mat-error *ngIf="clientForm.get('firstName')?.hasError('required')">
                             Le prénom est requis
-                        </mat-error>
-                    </mat-form-field>
+                            </mat-error>
+                            </mat-form-field>
 
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Nom de famille</mat-label>
@@ -103,7 +104,9 @@
                 <div class="submit-button">
                   <button mat-raised-button class="custom-button" type="submit" [disabled]="clientForm.invalid">Créer Compte</button>
               </div>
-                          </form>
+            </form>
         </mat-card-content>
     </mat-card>
+
+    </div>
 </div>

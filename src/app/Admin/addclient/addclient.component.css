@@ -1,16 +1,32 @@
+.addclient-section {
+  background-color: #f0f0f0;
+  min-height: 100vh; /* Make it span the full page height */
+  display: flex;
+  flex-direction: column; /* Stack the "Back" button and form vertically */
+  align-items: center; /* Horizontally center the content */
+  justify-content: center; /* Vertically center the content */
+  position: relative; /* Relative positioning for the Back button */
+}
+
+.back-button-container {
+  position: absolute;
+  top: 0px;
+  left: 0px; /* Position the button in the top left */
+}
+
+
 .add-client-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   width: 100%; /* Ensure full width */
-
 }
 
 mat-card {
   width: 100%; /* Ensure the card takes full width */
   max-width: 1000px; /* You can adjust this as needed */
   margin: 0 auto; /* Center the card horizontally */
+  padding: 20px;
 }
 
 .full-width {
@@ -59,7 +75,7 @@ mat-card {
 }
 
 ::ng-deep .custom-button:disabled {
-  background-color: #d3d3d3 !important; /* Set background to light gray */
+  background-color: #afafaf !important; /* Set background to light gray */
   color: rgba(0, 0, 0, 0.5) !important; /* Set text color to a dark gray */
   cursor: not-allowed !important; /* Show not-allowed cursor */
 }

@@ -86,3 +86,17 @@
     display: flex;
     align-items: center; /* Center the navigation buttons vertically */
   }
+
+
+  .dialog-title {
+    text-align: center; /* Center the dialog title */
+    margin-bottom: 16px; /* Add some space below the title */
+  }
+  
+  .button-group {
+    display: flex; /* Use flexbox for button layout */
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 5px; /* Space between buttons */
+    margin-top: 16px; /* Optional: add space above buttons */
+  }
+  
