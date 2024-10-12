@@ -105,12 +105,6 @@
     text-decoration: underline;
 }
 
-/* Hidden password change form */
-.hidden {
-    display: none;
-}
-
-
 
 .submit-password-btn {
     background-color: #197330;

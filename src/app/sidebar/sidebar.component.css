@@ -21,15 +21,19 @@ mat-sidenav {
 }
 
 .sidebar-logo {
-  width: 80px;
+  width: 100px;
   height: auto;
+  margin-top: 10px;
   margin-bottom: 50px;
+  margin-left: -3px;
 }
 
 .center-logo {
   display: flex;
   justify-content: center; /* Center the logo horizontally */
   width: 100%; /* Ensure the container takes full width */
+  margin-left: -3px;
+
 }
 
 .username {

@@ -1,0 +1,52 @@
+.licence-section {
+    margin-bottom: 225px; /* Space below the section */
+  }
+  
+  .card {
+    background-color: #d3213f; /* Red background */
+    padding: 20px; /* Padding for inner content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 150px; /* Set height for the card */
+    color: white; /* Title color */
+    text-align: center; /* Center text */
+    position: relative; /* Allow for absolute positioning of the title */
+  }
+  
+  .card .title {
+    position: absolute; /* Position the title absolutely */
+    top: 65%; /* Move down to the middle */
+    left: 50%; /* Move right to the middle */
+    transform: translate(-50%, -50%); /* Center it */
+    margin: 0; /* Remove default margins */
+    font-weight: bold;
+    font-size: 45px;
+  }
+  
+  .description-section {
+    display: flex; /* Enable flexbox for the description section */
+    margin-top: 50px; /* Space between card and description */
+    margin-left: 80px; /* Left margin */
+    margin-right: 80px; /* Right margin */
+  }
+  
+  .description-image {
+    flex: 1; /* Take up half the width */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    height: 400px; /* Ensure it retains the correct height */
+    width: 500px; /* Fixed width for the image */
+    border-radius: 10px; /* Rounded corners for the image */
+  }
+  
+  .description-text {
+    flex: 1; /* Take up half the width */
+    padding: 20px; /* Padding for text */
+    margin-left: 50px; /* Margin on the left */
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center vertically */
+    font-size: 21px; /* Font size for the description text */
+    font-family: 'Times New Roman', Times, serif;
+  }
+  

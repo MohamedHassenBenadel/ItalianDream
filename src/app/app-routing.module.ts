@@ -18,6 +18,9 @@ import { AddclientComponent } from './Admin/addclient/addclient.component';
 import { ManagedoucmentsComponent } from './Admin/managedoucments/managedoucments.component';
 import { ClientaccessComponent } from './Admin/clientaccess/clientaccess.component';
 
+import { LicenceComponent } from './services/licence/licence.component';
+import { MasterComponent } from './services/master/master.component';
+import { MedecineComponent } from './services/medecine/medecine.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -25,6 +28,9 @@ const routes: Routes = [
   { path: 'accueil', component: AccueilComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'contact', component: ContactComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'feedback', component: FeedbackComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
+  { path: 'licence', component: LicenceComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
+  { path: 'master', component: MasterComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
+  { path: 'medecine', component: MedecineComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
 
   
   {path:'admindashboard' , component:AdmindashboardComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },

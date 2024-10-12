@@ -103,5 +103,5 @@ mat-form-field {
 .forgot-password:hover {
   color: #555555;
   text-decoration: underline;
-  text-decoration-color: red;
+  text-decoration-color: #555555;
 }

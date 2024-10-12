@@ -61,6 +61,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ClientaccessComponent } from './Admin/clientaccess/clientaccess.component';
+import { LicenceComponent } from './services/licence/licence.component';
+import { MasterComponent } from './services/master/master.component';
+import { MedecineComponent } from './services/medecine/medecine.component';
 
 
 
@@ -85,7 +88,10 @@ import { ClientaccessComponent } from './Admin/clientaccess/clientaccess.compone
     AdmindashboardComponent,
     AddclientComponent,
     ManagedoucmentsComponent,
-    ClientaccessComponent
+    ClientaccessComponent,
+    LicenceComponent,
+    MasterComponent,
+    MedecineComponent
     ],
   imports: [
     BrowserModule,
