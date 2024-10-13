@@ -23,7 +23,7 @@
 
           <button mat-raised-button class="button-login"(click)="redirectTo('/dashboard')">Se connecter</button>
 
-          <span class="forgot-password" >Mot de passe oublié?</span>
+          <span class="forgot-password"(click)="redirectTo('/verifyemail')" >Mot de passe oublié?</span>
         </form>
       </mat-card-content>
     </mat-card>

@@ -64,6 +64,8 @@ import { ClientaccessComponent } from './Admin/clientaccess/clientaccess.compone
 import { LicenceComponent } from './services/licence/licence.component';
 import { MasterComponent } from './services/master/master.component';
 import { MedecineComponent } from './services/medecine/medecine.component';
+import { CodeComponent } from './PasswordRecovery/code/code.component';
+import { VerifyemailComponent } from './PasswordRecovery/verifyemail/verifyemail.component';
 
 
 
@@ -91,7 +93,9 @@ import { MedecineComponent } from './services/medecine/medecine.component';
     ClientaccessComponent,
     LicenceComponent,
     MasterComponent,
-    MedecineComponent
+    MedecineComponent,
+    CodeComponent,
+    VerifyemailComponent
     ],
   imports: [
     BrowserModule,

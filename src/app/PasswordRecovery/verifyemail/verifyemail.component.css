@@ -1,0 +1,91 @@
+.verify-email-container {
+  position: relative; /* Enable absolute positioning for child elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: transparent;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px; /* Spacing below the icon */
+}
+
+.bold-title {
+  font-weight: bold;
+  margin: 10px 0;  /* Spacing above and below the title */
+}
+
+.description{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.verify-email-card {
+  background-color: transparent;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  border: solid 1px #dfdfdf;
+}
+
+.email-input {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.sendmail-btn {
+  margin-top: 10px;
+  background-color: #197330 !important; 
+  color: white !important; 
+  width: 100%; 
+}
+
+.sendmail-btn[disabled] {
+  background-color: rgba(25, 115, 50, 0.5) !important;
+  color: rgba(255, 255, 255, 0.5) !important; 
+  cursor: not-allowed; 
+}
+
+/* Divider Styles */
+.divider-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0; /* Spacing above and below the divider */
+}
+
+.divider {
+  flex: 1; /* Make dividers take up available space */
+  border: none;
+  border-top: 1px solid #dfdfdf; /* Border style */
+}
+
+.or-text {
+  margin: 0 10px; /* Spacing around the "or" text */
+  font-weight: bold; /* Bold text */
+}
+
+/* Return Button Styles */
+.return-button-container {
+  margin-top: 10px; /* Spacing above the return button */
+}
+
+.return-btn {
+  border: solid 1px #dfdfdf; /* Same border as the card */
+  width: 100%;
+  padding: 10px 0; /* Padding for the button */
+  background-color: #f2f2f2;
+}
+mat-error {
+  color: red; /* Change the error message color to red */
+  font-size: 0.875rem; /* Adjust the font size */
+  margin-top: -20px;
+}

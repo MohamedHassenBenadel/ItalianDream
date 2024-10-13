@@ -1,0 +1,47 @@
+<div class="verify-email-container">
+  <mat-card class="verify-email-card">
+    <div class="icon-container">
+      <img src="../../../assets/lock.png"/>
+    </div>
+    <h2 class="bold-title">Mot de passe oublié ?</h2>
+    <p class="description">Entrez votre adresse mail pour récupérer votre mot de passe.</p>
+    
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="email-input">
+        <mat-label>Email</mat-label>
+        <input 
+          matInput 
+          placeholder="Enter your email" 
+          type="email" 
+          [(ngModel)]="email" 
+          #emailInput="ngModel" 
+          [required]="true" 
+          [email]="true">
+        <mat-error *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+          <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+          <div *ngIf="emailInput.errors?.['email']">Invalid email format.</div>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions class="card-actions">
+      <button mat-raised-button 
+              class="sendmail-btn" 
+              [disabled]="emailInput.invalid || !email">
+        Envoyer Email
+      </button>
+    </mat-card-actions>
+    
+    <!-- Divider Section -->
+    <div class="divider-container">
+      <hr class="divider"/>
+      <span class="or-text">ou</span>
+      <hr class="divider"/>
+    </div>
+
+    <!-- Return to Login Button -->
+    <div class="return-button-container">
+      <button mat-button class="return-btn" (click)="redirectTo('/login')">Retour vers connexion</button>
+    </div>
+  </mat-card>
+</div>
