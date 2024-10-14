@@ -120,7 +120,7 @@ import { VerifyemailComponent } from './PasswordRecovery/verifyemail/verifyemail
     MatStepperModule,
     MatPaginatorModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 

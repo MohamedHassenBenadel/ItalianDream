@@ -27,6 +27,7 @@
     <mat-card-actions class="card-actions">
       <button mat-raised-button 
               class="sendmail-btn" 
+              (click)="redirectTo('/code')"
               [disabled]="emailInput.invalid || !email">
         Envoyer Email
       </button>

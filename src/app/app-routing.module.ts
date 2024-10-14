@@ -36,8 +36,9 @@ const routes: Routes = [
   { path: 'master', component: MasterComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'medecine', component: MedecineComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
 
-  { path: 'code', component: CodeComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'verifyemail', component: VerifyemailComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+  { path: 'code', component: CodeComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+
 
 
 

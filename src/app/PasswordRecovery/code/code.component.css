@@ -1,0 +1,114 @@
+/* Style for the container to center the card */
+.code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: transparent;
+}
+
+.card {
+    background-color: white; /* Set the background color to white */
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: solid 1px #dfdfdf;
+    border-radius: 8px; /* Add rounded corners to the card */
+}
+
+/* Center icon horizontally and set its dimensions */
+.icon-container {
+    display: flex;
+    justify-content: center; /* Center the icon */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Full width of the card */
+    margin-bottom: 16px; /* Spacing below the icon */
+}
+
+.icon-container img {
+    max-width: 100%; /* Make sure the image is responsive */
+    height: 155px; /* Keep the aspect ratio */
+    width: 152px; /* Set a fixed width for the icon */
+}
+
+.bold-title {
+    font-weight: bold;
+    margin: 10px 0; /* Spacing above and below the title */
+}
+
+.description{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+  }
+
+
+.otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.otp-input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #5555; /* Adjusted border color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.otp-input:focus {
+    border-color: #0e431b;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 193, 193, 0.2);
+}
+
+.valider-btn {
+    margin-top: 20px;
+    background-color: #197330 !important; 
+    color: white !important; 
+    width: 100%; 
+  }
+  
+  .valider-btn[disabled] {
+    background-color: rgba(25, 115, 50, 0.5) !important;
+    color: rgba(255, 255, 255, 0.5) !important; 
+    cursor: not-allowed; 
+  }
+  
+.space {
+    height: 10px; /* Adjust height as needed */
+}
+
+.divider-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0; /* Spacing above and below the divider */
+}
+
+.divider {
+    flex: 1; /* Make dividers take up available space */
+    border: none;
+    border-top: 1px solid #dfdfdf; /* Border style */
+}
+
+.or-text {
+    margin: 0 10px; /* Spacing around the "or" text */
+    font-weight: bold; /* Bold text */
+}
+
+.return-button-container {
+    margin-top: 10px; /* Spacing above the return button */
+}
+
+.return-btn {
+    border: solid 1px #dfdfdf; /* Same border as the card */
+    width: 100%;
+    padding: 10px 0; /* Padding for the button */
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
