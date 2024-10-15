@@ -17,6 +17,7 @@ import { AdmindashboardComponent } from './Admin/admindashboard/admindashboard.c
 import { AddclientComponent } from './Admin/addclient/addclient.component';
 import { ManagedoucmentsComponent } from './Admin/managedoucments/managedoucments.component';
 import { ClientaccessComponent } from './Admin/clientaccess/clientaccess.component';
+import { ManagePaymentComponent } from './Admin/manage-payment/manage-payment.component';
 //Services
 import { LicenceComponent } from './services/licence/licence.component';
 import { MasterComponent } from './services/master/master.component';
@@ -42,12 +43,10 @@ const routes: Routes = [
   { path: 'newpassword' , component: NewpasswordComponent ,data: { showNavbar: false, showSidebar: false, showFooter: false } },
 
 
-
-
-  
   {path:'admindashboard' , component:AdmindashboardComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
   {path:'ajouterclient' , component:AddclientComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
   {path:'documents' , component:ManagedoucmentsComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+  {path:'adminpaiement' , component:ManagePaymentComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
   {path:'access' , component:ClientaccessComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
 
   

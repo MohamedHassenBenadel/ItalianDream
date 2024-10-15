@@ -1,0 +1,59 @@
+.user-table-container {
+    width: 75%; /* Set the width of the container to 75% */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .table-title {
+    text-align: center; /* Center the title */
+    margin-bottom: 16px; /* Add some space below the title */
+    margin-top: 20px;
+  }
+  
+  mat-form-field {
+    width: 50%; /* Set search bar to half of the table width */
+    margin-bottom: 16px; /* Add space below the search bar */
+  }
+  
+  .search-bar {
+    display: block; /* Ensure search bar takes its own line */
+    margin: 0 auto; /* Center the search bar */
+  }
+  
+  /* Table styling */
+  
+  ::ng-deep .mat-mdc-header-cell {
+    background-color: #d8d8d8 !important; /* Change header background color */
+    padding: 12px; /* Padding for header cells */
+    text-align: left; /* Align header text to the left */
+  }
+  
+  .button-group {
+    display: flex; /* Use flexbox for button layout */
+    gap: 5px; /* Space between buttons */
+  }
+  
+  .dialog-title {
+    text-align: center; /* Center the dialog title */
+    margin-bottom: 16px; /* Add some space below the title */
+  }
+  
+  .mat-paginator {
+    display: flex;
+    justify-content: center; /* Center the paginator under the table */
+    margin-top: 20px; /* Add space between the table and paginator */
+  }
+  
+  .mat-paginator-range-label {
+    flex-grow: 1; /* Ensure the range label takes available space */
+    text-align: center; /* Center-align the range label */
+  }
+  
+  .mat-paginator-page-size {
+    margin-right: 16px; /* Add space between page size selector and buttons */
+  }
+  
+  .mat-paginator-navigation {
+    display: flex;
+    align-items: center; /* Center the navigation buttons vertically */
+  }
+  
