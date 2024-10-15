@@ -30,7 +30,7 @@ export class CodeComponent {
     const enteredOtp = this.otp1 + this.otp2 + this.otp3 + this.otp4;
     if (enteredOtp === this.correctOtp) {
       console.log('Code correct!'); // Log success
-      // Navigate to the next page or perform further actions here
+      this.router.navigate(['/newpassword']);
     } else {
       console.log('Code incorrect!'); // Log failure
     }

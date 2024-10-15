@@ -25,6 +25,7 @@ import { MedecineComponent } from './services/medecine/medecine.component';
 //Password Recovery 
 import { VerifyemailComponent } from './PasswordRecovery/verifyemail/verifyemail.component';
 import { CodeComponent } from './PasswordRecovery/code/code.component';
+import { NewpasswordComponent } from './PasswordRecovery/newpassword/newpassword.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -38,6 +39,7 @@ const routes: Routes = [
 
   { path: 'verifyemail', component: VerifyemailComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
   { path: 'code', component: CodeComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
+  { path: 'newpassword' , component: NewpasswordComponent ,data: { showNavbar: false, showSidebar: false, showFooter: false } },
 
 
 

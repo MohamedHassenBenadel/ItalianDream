@@ -66,6 +66,7 @@ import { MasterComponent } from './services/master/master.component';
 import { MedecineComponent } from './services/medecine/medecine.component';
 import { CodeComponent } from './PasswordRecovery/code/code.component';
 import { VerifyemailComponent } from './PasswordRecovery/verifyemail/verifyemail.component';
+import { NewpasswordComponent } from './PasswordRecovery/newpassword/newpassword.component';
 
 
 
@@ -95,7 +96,8 @@ import { VerifyemailComponent } from './PasswordRecovery/verifyemail/verifyemail
     MasterComponent,
     MedecineComponent,
     CodeComponent,
-    VerifyemailComponent
+    VerifyemailComponent,
+    NewpasswordComponent
     ],
   imports: [
     BrowserModule,
