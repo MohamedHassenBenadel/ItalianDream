@@ -1,16 +1,16 @@
 <div class="filter-container">
-    <label for="region-select">Choisir une région :</label>
-    <select id="region-select" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
-      <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
-    </select>
-  </div>
-  
-  <div class="universities-container">
-    <h2>Universities in {{ selectedRegion }}</h2>
-    <div class="card-container">
-      <div class="card" *ngFor="let university of filteredUniversities()">
-        <img [src]="university.image" alt="{{ university.name }}" />
-        <h3>{{ university.name }}</h3>
-      </div>
+  <label for="region-select">Choisir une région :</label>
+  <select id="region-select" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
+    <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+  </select>
+</div>
+
+<div class="universities-container">
+  <h2>Universities in {{ selectedRegion }}</h2>
+  <div class="card-container">
+    <div class="card" *ngFor="let university of filteredUniversities()">
+      <img [src]="university.image" alt="{{ university.name }}" />
+      <h3>{{ university.name }}</h3>
     </div>
   </div>
+</div>

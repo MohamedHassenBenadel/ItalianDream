@@ -60,3 +60,36 @@
 .styled-table .mat-column-deadline th, .styled-table .mat-column-deadline td {
     text-align: center; /* Center-align header and content */
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .styled-table th, .styled-table td {
+        font-size: 0.5rem; /* Smaller font size for better readability on small screens */
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+    
+    .table-title {
+        font-size: 1rem; /* Smaller title font size on mobile */
+    }
+
+    .table-container {
+        width: 90%; /* Allow the table container to take full width on small screens */
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .styled-table {
+        display: block; /* Makes table behave like a block element */
+        overflow-x: auto; /* Enables horizontal scrolling */
+        white-space: nowrap; /* Prevents text from wrapping, keeping rows on a single line */
+    }
+
+.styled-table .mat-column-deadline {
+    width: 80px; /* Adjust width for 'Date Limite' column */
+    text-align: center; /* Center-align text in 'Date Limite' column */
+}
+
+.styled-table .mat-column-disponibility {
+    width: 50px; /* Adjust width for 'Date Limite' column */
+    text-align: center; /* Center-align text in 'Date Limite' column */
+} 
+}

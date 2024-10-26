@@ -1,7 +1,7 @@
 <div class="parallax-wrapper">
   <div class="parallax-container" (mousemove)="onMouseMove($event)">
     <img src="../../assets/Banner.png" class="parallax-image" />
-    <img src="../../assets/Slogan.png" class="overlay-image" />
+    <img src="../../assets/Slogan.png" class="overlay-image" (click)="redirectTo('/accueil')" />
   </div>
 
   <div class="main">
@@ -21,9 +21,9 @@
             <input matInput type="password" autocomplete="new-password">
           </mat-form-field>
 
-          <button mat-raised-button class="button-login"(click)="redirectTo('/dashboard')">Se connecter</button>
+          <button mat-raised-button class="button-login" (click)="redirectTo('/dashboard')">Se connecter</button>
 
-          <span class="forgot-password"(click)="redirectTo('/verifyemail')" >Mot de passe oublié?</span>
+          <span class="forgot-password" (click)="redirectTo('/verifyemail')">Mot de passe oublié?</span>
         </form>
       </mat-card-content>
     </mat-card>

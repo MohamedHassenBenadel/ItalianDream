@@ -26,6 +26,12 @@
     flex: 1;
     padding: 20px;
   }
+
+  .form-container input,
+  .form-container textarea {
+    font-size: 16px; /* Prevents mobile zoom-in on input */
+  }
+
   
   .rating-container {
     display: flex;
@@ -91,4 +97,55 @@
     position: relative;
     box-sizing: border-box;
   }
-  
+
+/* Tablet Screen (768px - 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    min-height: 400px;
+    margin-top: 10px;
+  }
+
+  .form-wrapper {
+    padding: 15px;
+    width: 90%;
+  }
+}
+
+/* Mobile Screen (Up to 768px) */
+@media (max-width: 768px) {
+  .form-container {
+    padding-top: 50px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    min-height: 300px;
+    margin-top: 10px;
+  }
+
+  .form-wrapper {
+    padding: 15px;
+    width: 90%;
+  }
+  .mat-form-field {
+    max-width: 100%; /* Slightly wider on mobile for better user experience */
+  }
+  .send-button {
+    position: fixed; /* Fix button in view for mobile */
+    bottom: 15px; /* Bottom padding */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the button */
+    z-index: 10; /* Ensure it appears above form elements */
+  }
+
+
+}

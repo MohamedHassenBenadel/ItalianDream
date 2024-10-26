@@ -8,13 +8,13 @@
 
 mat-sidenav {
   width: 250px; /* Fixed width for the sidebar */
+  transition: width 0.3s; /* Smooth transition for width change */
 }
 
 .sidebar-content {
   display: flex;
   flex-direction: column;
   height: 100%;
-  /*padding: 16px;*/
   box-sizing: border-box;
   align-items: center; /* Center items horizontally */
   background-color: #F2F2F2;
@@ -33,7 +33,6 @@ mat-sidenav {
   justify-content: center; /* Center the logo horizontally */
   width: 100%; /* Ensure the container takes full width */
   margin-left: -3px;
-
 }
 
 .username {
@@ -92,8 +91,71 @@ mat-sidenav {
   padding: 16px;
 }
 
-
 .sidebar-item.active {
   background-color: #197330 !important;
   color: #f0f0f0 !important;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  
+
+  .sidenav-container {
+    overflow: hidden; /* Prevent overflow */
+    position: fixed;
+    width: 100%; /* Ensure full width on mobile */
+    height: 100%; /* Ensure full height on mobile */
+    overflow-x: hidden;
+  }
+
+  mat-sidenav {
+    width: 48px; /* Smaller width for mobile */
+    }
+
+    .sidenav-container, .sidebar-content {
+      width: 100%;
+      overflow-x: hidden;
+    }
+  
+
+  .sidebar-logo {
+    width: 50px;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 7px;
+  }
+  
+  .username {
+    display: none; /* Hide username text */
+  }
+
+  .sidebar-item {
+    justify-content: center; /* Center icons */
+    text-align: center; /* Center the text */
+  }
+
+  .sidebar-item span {
+    display: none !important; /* Hide text in sidebar items */
+  }
+
+  .sidebar-item mat-icon {
+    font-size: 16px; /* Adjust icon size for smaller screens */
+  }
+  
+  .disconnect-button span {
+    display: none !important; /* Hide text in sidebar items */
+
+  }  
+  .disconnect-button mat-icon {
+    font-size: 16px; 
+  }
+  
+  .disconnect-button {
+    justify-content: center; /* Center icon in disconnect button */
+    padding: 0px;
+  }
+
+
 }

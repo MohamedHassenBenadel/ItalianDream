@@ -6,7 +6,11 @@
 
 /* Filter container styles */
 .filter-container {
-    margin: 20px 0;
+    display: flex;              /* Make the container a flexbox */
+    flex-direction: row;       /* Keep items in a row */
+    align-items: center;       /* Center items vertically */
+    justify-content: center; /* Align items to the right */
+
 }
 
 /* Styles for the dropdown */
@@ -15,7 +19,7 @@ select {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin: 0 10px;
+    margin-left: 10px;        /* Add space to the left of the select */
 }
 
 /* Card container styles */
@@ -57,9 +61,20 @@ img {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .card {
         width: 90%; /* Full width on small screens */
-        height: auto; /* Adjust height for smaller screens */
+        height: 270px;
+        margin: 10px 0; /* Add vertical margin for spacing */
+    }
+
+    .filter-container {
+        flex-direction: column; /* Ensure vertical alignment on small screens */
+        align-items: center; /* Center elements horizontally */
+    }
+
+    .card h3 {
+        margin: 5px 0; /* Add some margin for spacing */
+        font-size: 14px;
     }
 }

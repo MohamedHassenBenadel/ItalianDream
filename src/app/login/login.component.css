@@ -33,6 +33,7 @@
   width: 262px;
   height: 67px;
   z-index: 1;
+  cursor: pointer;
 }
 
 .subtext {

@@ -3,7 +3,7 @@
 }
 
 .tab-content {
-  padding: 16px;
+  padding: 15px;
 }
 
 .header {
@@ -73,3 +73,46 @@ h3 {
 }
 
 
+@media (max-width: 768px) {
+  .nombre-de-seance, .date-du-test {
+      font-size: 0.9rem; /* Smaller font size for responsive view */
+      gap: 4px; /* Reduce gap between icon and text */
+  }
+
+  .header {
+      flex-direction: column; /* Stack the header elements vertically on smaller screens */
+      align-items: flex-start;
+  }
+
+  /* Reduce padding for responsive view */
+  .tab-content {
+      padding: 8px;
+  }
+  
+  /* Smaller icon and text for responsive view */
+  mat-icon {
+      font-size: 20px;
+  }
+
+  /* Adjust the .mat-tab-group to show two tabs per row */
+  .mat-tab-group {
+      display: flex;
+      flex-wrap: wrap; /* Wrap tabs onto multiple rows */
+  }
+
+  .mat-tab-label {
+      width: 40%; /* Set each tab to 48% width to fit two per row */
+      box-sizing: border-box;
+  }
+
+  ::ng-deep .mat-mdc-tab {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  ::ng-deep .mat-mdc-tab-header-pagination {
+    margin: 0; /* Remove margin */
+    padding: 50px; /* Set padding to your desired amount */
+}
+
+  }

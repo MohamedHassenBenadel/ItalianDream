@@ -188,3 +188,57 @@
 .password-modal form {
     overflow: hidden; /* Prevent overflow of the form */
 }
+/* Responsive styling */
+@media (max-width: 768px) {
+    .background img.bg-image {
+        display: none;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .card {
+        margin-left: -15px;
+        margin-bottom: 15px;
+        width: 100%; /* Adjust width for mobile */
+        padding: 20px;
+    }
+    
+    .user-info {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+    }
+    .info-row {
+        display: flex;
+        align-items: center; /* Ensure content aligns vertically */
+        padding: 5px 0; /* Reduce padding for mobile */
+    }
+    .label {
+        font-size: 0.5rem; /* Smaller font size for mobile */
+        flex: 1;
+    }
+
+    .info-text {
+        font-size: 0.5rem; /* Smaller font size for mobile */
+        flex: 2;
+        text-align: left; /* Ensure text stays aligned */
+    }
+
+    
+    .password-modal {
+        padding: 10px;
+    }
+    
+    .password-modal h2 {
+        font-size: 20px; /* Smaller font for title */
+    }
+    
+    .label, .info-text {
+        font-size: 0.9rem; /* Smaller font size */
+    }
+    
+    .submit-password-btn {
+        padding: 8px; /* Smaller padding for mobile */
+    }
+}

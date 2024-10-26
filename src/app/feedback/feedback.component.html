@@ -1,54 +1,53 @@
 <div class="form-container">
-    <div class="container">
-      <div class="image-container">
-      </div>
-      <div class="form-wrapper">
-        <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-          <mat-step [stepControl]="firstFormGroup">
-            <form [formGroup]="firstFormGroup">
-              <ng-template matStepLabel>Entrez Vos données</ng-template>
-              <mat-form-field>
-                <mat-label>Name</mat-label>
-                <input matInput formControlName="firstCtrl" required>
-              </mat-form-field><br>
-              <mat-form-field>
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="emailCtrl" required>
-              </mat-form-field>
-              <div class="navigation-buttons">
-                <button mat-button matStepperNext>Suivant</button>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Votre feedback</ng-template>
-              <mat-form-field>
-                <mat-label>Feedback</mat-label>
-                <textarea matInput placeholder="Share your feedback here" formControlName="feedbackCtrl" rows="5" required></textarea>
-              </mat-form-field>
-              <div class="navigation-buttons">
-                <button mat-button matStepperPrevious>Retour</button>
-                <button mat-button (click)="sendFeedback()" class="send-button">Suivant</button>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="ratingFormGroup">
-            <ng-template matStepLabel>Evaluez nos services</ng-template>
-            <div class="rating-container">
-              <div *ngFor="let rating of ratings"
-                   [class.selected]="rating === ratingFormGroup.value.ratingCtrl"
-                   (click)="selectRating(rating)">
-                {{ rating }}
-              </div>
+  <div class="container">
+    <div class="image-container">
+    </div>
+    <div class="form-wrapper">
+      <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Entrez Vos données</ng-template>
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="firstCtrl" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="emailCtrl" required>
+            </mat-form-field>
+            <div class="navigation-buttons">
+              <button mat-button matStepperNext>Suivant</button>
             </div>
-            <div class="buttons">
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button (click)="submitRating()" class="send-button">Submit</button>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Votre feedback</ng-template>
+            <mat-form-field>
+              <mat-label>Feedback</mat-label>
+              <textarea matInput placeholder="Share your feedback here" formControlName="feedbackCtrl" rows="5"
+                required></textarea>
+            </mat-form-field>
+            <div class="navigation-buttons">
+              <button mat-button matStepperPrevious>Retour</button>
+              <button mat-button (click)="sendFeedback()" class="send-button">Suivant</button>
             </div>
-          </mat-step>
-        </mat-stepper>
-      </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="ratingFormGroup">
+          <ng-template matStepLabel>Evaluez nos services</ng-template>
+          <div class="rating-container">
+            <div *ngFor="let rating of ratings" [class.selected]="rating === ratingFormGroup.value.ratingCtrl"
+              (click)="selectRating(rating)">
+              {{ rating }}
+            </div>
+          </div>
+          <div class="buttons">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="submitRating()" class="send-button">Submit</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
     </div>
   </div>
-  
+</div>

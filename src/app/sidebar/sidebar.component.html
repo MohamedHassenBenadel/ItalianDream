@@ -1,54 +1,49 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav mode="side" opened>
     <div class="sidebar-content">
-      <!-- Logo with new class for horizontal centering -->
       <div class="center-logo">
         <img src="assets/logo.png" alt="Logo" class="sidebar-logo">
       </div>
-      <!-- Username -->
       <span class="username">
         <i class="fas fa-user"></i> Mohamed Hassen Benadel
       </span>
+
       <!-- Sidebar Items with Icons -->
-
-      <button mat-button class="sidebar-item"    
-      [ngClass]="{'active': isActiveRoute('/dashboard/profile')}" 
-      (click)="redirectTo('/dashboard/profile')"> 
-      <mat-icon>person_outline</mat-icon>Profile
-      </button>
-      
-      <button mat-button class="sidebar-item" 
-              [ngClass]="{'active': isActiveRoute('/dashboard/niveau')}" 
-              (click)="redirectTo('/dashboard/niveau')"> 
-      <mat-icon>language</mat-icon> Niveau Italien 
-    </button>
-      <button mat-button 
-              class="sidebar-item" 
-              [ngClass]="{'active': isActiveRoute('/dashboard/documents')}"
-              (click)="redirectTo('/dashboard/documents')"> 
-        <mat-icon>description</mat-icon> Documents
-      </button>
-      <button mat-button 
-              class="sidebar-item" 
-              [ngClass]="{'active': isActiveRoute('/dashboard/paiement')}"
-              (click)="redirectTo('/dashboard/paiement')">
-        <mat-icon>payment</mat-icon> Paiement
+      <button mat-button class="sidebar-item" [ngClass]="{'active': isActiveRoute('/dashboard/profile')}"
+        (click)="redirectTo('/dashboard/profile')">
+        <mat-icon>person_outline</mat-icon>
+        <span>Profile</span> <!-- This text will be hidden on mobile -->
       </button>
 
-       <button mat-button 
-              class="sidebar-item"
-              [ngClass]="{'active': isActiveRoute('/dashboard/orientation')}"
-              (click)="redirectTo('/dashboard/orientation')" >
-              <mat-icon>school</mat-icon>Orientation
+      <button mat-button class="sidebar-item" [ngClass]="{'active': isActiveRoute('/dashboard/niveau')}"
+        (click)="redirectTo('/dashboard/niveau')">
+        <mat-icon>language</mat-icon>
+        <span>Niveau Italien</span> <!-- This text will be hidden on mobile -->
       </button>
 
+      <button mat-button class="sidebar-item" [ngClass]="{'active': isActiveRoute('/dashboard/documents')}"
+        (click)="redirectTo('/dashboard/documents')">
+        <mat-icon>description</mat-icon>
+        <span>Documents</span> <!-- This text will be hidden on mobile -->
+      </button>
 
-      <!-- Disconnect Button with Icon -->
-      <button mat-button class="disconnect-button"  (click)="redirectTo('/login')">
-        <mat-icon>logout</mat-icon> Disconnect
+      <button mat-button class="sidebar-item" [ngClass]="{'active': isActiveRoute('/dashboard/paiement')}"
+        (click)="redirectTo('/dashboard/paiement')">
+        <mat-icon>payment</mat-icon>
+        <span>Paiement</span> <!-- This text will be hidden on mobile -->
+      </button>
+
+      <button mat-button class="sidebar-item" [ngClass]="{'active': isActiveRoute('/dashboard/orientation')}"
+        (click)="redirectTo('/dashboard/orientation')">
+        <mat-icon>school</mat-icon>
+        <span>Orientation</span> <!-- This text will be hidden on mobile -->
+      </button>
+
+      <button mat-button class="disconnect-button" (click)="redirectTo('/login')">
+        <mat-icon>logout</mat-icon>
+        <span>Disconnect</span> <!-- This text will be hidden on mobile -->
       </button>
     </div>
-    
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>

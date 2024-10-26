@@ -112,3 +112,22 @@
     background-color: #f2f2f2;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    /* Remove card styling on smaller screens */
+    .card {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .code-container {
+        position: fixed; /* Keep the container fixed */
+        height: auto;
+        align-items: flex-start;
+        margin-top: 30px;
+        overflow-y: hidden;
+        padding : 5px;
+    }
+}

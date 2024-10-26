@@ -59,3 +59,41 @@
     color: red; /* Red color for total remaining amount */
   }
   
+  @media (max-width: 600px) {
+    .summary-container {
+      flex-direction: column; /* Stack summary items vertically */
+    }
+    .summary-label,
+    .summary-value {
+      display: block; /* Stack labels and values */
+      margin: 5px 0; /* Space between stacked items */
+    }
+    
+    .table-container {
+      margin-top: -20px;
+      width: 100%; /* Adjust as needed */
+      margin: 0 auto; /* Centers the container */
+      padding: 20px;
+      text-align: center;
+      margin-left: -15px;
+    }
+
+    .table-title {
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Adjust font size for the title */
+    color: #000; /* Title color */
+    margin-bottom: 70px;
+  }
+
+  .styled-table th, .styled-table td {
+    text-align: center; /* Center-aligns all columns */
+    border: 1px solid #ddd; /* Adds a border between cells */
+    vertical-align: middle; /* Aligns text vertically in cells */
+  }
+
+  
+
+  
+  
+  }
+  

@@ -1,5 +1,5 @@
 .medecine-section {
-    margin-bottom: 225px; /* Space below the section */
+    margin-bottom: 97px; /* Space below the section */
   }
   
   .card {
@@ -50,3 +50,57 @@
     font-family: 'Times New Roman', Times, serif;
   }
   
+  /* Tablet Screen (768px - 1024px) */
+@media (max-width: 1024px) {
+  .description-section {
+    margin-left: 40px; /* Adjust margin */
+    margin-right: 40px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
+
+  .description-image,
+  .description-text {
+    width: 90%; /* Take up most of the screen width */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .card .title {
+    font-size: 35px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Mobile Screen (Up to 768px) */
+@media (max-width: 768px) {
+  .licence-section {
+    margin-bottom: 150px; /* Adjust space below section */
+  }
+
+  .card {
+    height: 100px; /* Reduce card height */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .card .title {
+    font-size: 28px; /* Adjust title size */
+    margin-top: 10px;
+  }
+
+  .description-section {
+    margin-left: 20px; /* Smaller side margins */
+    margin-right: 20px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .description-image {
+    height: 250px; /* Adjust image height */
+    width: 100%; /* Full width on mobile */
+  }
+
+  .description-text {
+    font-size: 18px; /* Smaller font size */
+    text-align: center; /* Center-align text */
+    margin-left: 0; /* Remove left margin */
+  }
+}

@@ -89,3 +89,22 @@ mat-error {
   font-size: 0.875rem; /* Adjust the font size */
   margin-top: -20px;
 }
+
+@media (max-width: 768px) {
+  /* Remove card styling on smaller screens */
+  .verify-email-card {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      max-width: 100%;
+  }
+
+  .verify-email-container {
+    position: fixed;
+      margin-top: 30px;
+      height: auto;
+      align-items: flex-start;
+      padding :5px;
+      overflow-y: hidden;
+  }
+}

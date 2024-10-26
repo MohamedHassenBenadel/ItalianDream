@@ -61,3 +61,30 @@
   display: flex;
   flex-direction: column; /* Stack title and content vertically */
 }
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.2rem; /* Smaller title font size */
+    
+  }
+
+  .cards-container {
+    margin-top: 0px;
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center; /* Center cards horizontally */
+  }
+
+  .document-card {
+    width: 90%; /* Make cards wider on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .document-icon {
+    padding-top: 15px ;
+    padding-bottom: 15px ;
+    width: 50px; /* Set width for the icon */
+    height: 50px; /* Set height for the icon */
+    flex: 1; /* Allow icon to take 1/3 of the card */
+  }
+  
+}
