@@ -110,7 +110,7 @@ mat-sidenav {
   }
 
   mat-sidenav {
-    width: 48px; /* Smaller width for mobile */
+    width: 40px; /* Smaller width for mobile */
     }
 
     .sidenav-container, .sidebar-content {
@@ -120,7 +120,7 @@ mat-sidenav {
   
 
   .sidebar-logo {
-    width: 50px;
+    width: 40px;
     height: auto;
     margin-top: 10px;
     margin-bottom: 50px;

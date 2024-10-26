@@ -30,8 +30,8 @@
     <ng-container matColumnDef="paid">
       <th mat-header-cell *matHeaderCellDef> Payé </th>
       <td mat-cell *matCellDef="let tranche">
-        <mat-icon *ngIf="tranche.paid" class="green-tick">check_circle</mat-icon>
-        <mat-icon *ngIf="!tranche.paid" color="warn">cancel</mat-icon>
+        <mat-icon *ngIf="tranche.paid" class="green-tick small-icon">check_circle</mat-icon>
+        <mat-icon *ngIf="!tranche.paid" color="warn" class="small-icon">cancel</mat-icon>
       </td>
     </ng-container>
 
