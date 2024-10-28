@@ -24,7 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 
 
 
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, isDevMode } from '@angular/core';
 import { CountUpModule } from 'ngx-countup';
 
 
@@ -68,6 +68,7 @@ import { CodeComponent } from './PasswordRecovery/code/code.component';
 import { VerifyemailComponent } from './PasswordRecovery/verifyemail/verifyemail.component';
 import { NewpasswordComponent } from './PasswordRecovery/newpassword/newpassword.component';
 import { ManagePaymentComponent } from './Admin/manage-payment/manage-payment.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -125,6 +126,12 @@ import { ManagePaymentComponent } from './Admin/manage-payment/manage-payment.co
     MatPaginatorModule,
     MatDialogModule,
     MatCheckboxModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA], 
