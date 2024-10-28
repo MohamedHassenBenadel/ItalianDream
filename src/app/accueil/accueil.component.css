@@ -46,11 +46,13 @@
     text-align: center;
     line-height: 1.4; 
 
+    margin-bottom: 50px;
+
 }
 
 .install-button {
     position: absolute;
-    top: 65%; /* Adjust this value to position it below the subtext */
+    top: 90%; /* Adjust this value to position it below the subtext */
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #197330; /* Customize button color */
@@ -63,7 +65,6 @@
     border-radius: 5px;
     cursor: pointer;
     z-index: 2; /* Ensures it appears above other elements */
-    margin-top: 20px;
 
 }
 
@@ -313,6 +314,12 @@
     .parallax-wrapper {
         height: 400px; /* Adjust height for better fit on smaller screens */
     }
+
+    .install-button {
+        font-size: 18px; /* Fixed size for larger screens */
+        padding: 10px 20px; /* Fixed padding for larger screens */
+    }
+
 
     .parallax-image {
         left: -30%; /* Adjust to fit better on smaller screens */

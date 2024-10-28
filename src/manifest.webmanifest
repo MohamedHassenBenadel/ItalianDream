@@ -1,7 +1,7 @@
 {
   "name": "ItalianDream",
   "short_name": "ItalianDream",
-  "theme_color": "##0E1D26",
+  "theme_color": "#0E1D26",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
