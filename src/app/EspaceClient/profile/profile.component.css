@@ -217,6 +217,7 @@
     .label {
         font-size: 0.5rem; /* Smaller font size for mobile */
         flex: 1;
+        margin-right: 5px;
     }
 
     .info-text {

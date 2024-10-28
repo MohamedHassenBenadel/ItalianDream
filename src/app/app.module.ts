@@ -69,6 +69,7 @@ import { VerifyemailComponent } from './PasswordRecovery/verifyemail/verifyemail
 import { NewpasswordComponent } from './PasswordRecovery/newpassword/newpassword.component';
 import { ManagePaymentComponent } from './Admin/manage-payment/manage-payment.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ConfirmDialogContent } from './sidebar/sidebar.component';
 
 
 
@@ -100,7 +101,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     CodeComponent,
     VerifyemailComponent,
     NewpasswordComponent,
-    ManagePaymentComponent
+    ManagePaymentComponent,
+    ConfirmDialogContent 
+
     ],
   imports: [
     BrowserModule,

@@ -39,7 +39,7 @@
         <span>Orientation</span> <!-- This text will be hidden on mobile -->
       </button>
 
-      <button mat-button class="disconnect-button" (click)="redirectTo('/login')">
+      <button mat-button class="disconnect-button" (click)="openConfirmDialog()">
         <mat-icon>logout</mat-icon>
         <span>Disconnect</span> <!-- This text will be hidden on mobile -->
       </button>
@@ -70,7 +70,7 @@
         [ngClass]="{'active': isActiveRoute('/dashboard/orientation')}">
         <mat-icon [ngClass]="{'active-icon': isActiveRoute('/dashboard/orientation')}">school</mat-icon>
       </button>
-      <button mat-button (click)="redirectTo('/login')" class="disconnect-mobile">
+      <button mat-button (click)="openConfirmDialog()" class="disconnect-mobile">
         <mat-icon>logout</mat-icon>
       </button>
     </div>

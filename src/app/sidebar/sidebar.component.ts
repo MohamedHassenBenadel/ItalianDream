@@ -1,14 +1,14 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrls: ['./sidebar.component.css'] // Fixed to 'styleUrls' instead of 'styleUrl'
 })
 export class SidebarComponent {
-
   isSidebarVisible: boolean = true; // Sidebar is visible by default
   isMobile: boolean = false; // Initially set to false
 
@@ -18,7 +18,7 @@ export class SidebarComponent {
     this.checkViewportSize(); // Check viewport size on resize
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dialog: MatDialog) {
     this.checkViewportSize(); // Check viewport size on initialization
   }
 
@@ -28,13 +28,53 @@ export class SidebarComponent {
   }
 
   isActiveRoute(route: string): boolean {
-   // return this.router.url === route;
-   return this.router.url.startsWith(route);
+    // return this.router.url === route;
+    return this.router.url.startsWith(route);
   }
 
   redirectTo(route: string) {
     this.router.navigate([route]);
   }
 
+  // Method to open the confirmation dialog
+  openConfirmDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmDialogContent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // If the user confirmed, redirect to the login page
+        this.redirectTo('/login');
+      }
+    });
+  }
+}
+
+@Component({
+  template: `
+    <h2 mat-dialog-title>Confirmation</h2>
+    <mat-dialog-content>
+      <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+      <button mat-button (click)="onCancel()">Annuler</button>
+      <button mat-button color="primary" (click)="onConfirm()">Confirmer</button>
+    </mat-dialog-actions>
+  `,
+  styles: [`
+    mat-dialog-actions {
+      display: flex;
+      justify-content: center;
+    }
+  `]
+})
+export class ConfirmDialogContent {
+  constructor(private dialogRef: MatDialogRef<ConfirmDialogContent>) {}
+
+  onConfirm(): void {
+    this.dialogRef.close(true);
+  }
+
+  onCancel(): void {
+    this.dialogRef.close(false);
+  }
 }

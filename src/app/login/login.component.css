@@ -106,3 +106,45 @@ mat-form-field {
   text-decoration: underline;
   text-decoration-color: #555555;
 }
+
+/* Hide parallax image and adjust form styles for mobile */
+@media (max-width: 600px) { /* Adjust the max-width as needed */
+  .parallax-image {
+    display: none; /* Hide the parallax image on mobile */
+  }
+
+  .main {
+    padding: 0 16px; /* Add some padding for the form */
+  }
+
+  .login-card {
+    box-shadow: none; /* Remove box shadow */
+    border: none; /* Remove border */
+    background: transparent; /* Make the background transparent */
+    padding: 0; /* Remove padding */
+  }
+
+  .login-title {
+    font-size: 24px; /* Adjust title font size as needed */
+  }
+
+  .login-form {
+    width: 100%; /* Make sure the form takes full width */
+  }
+
+  .button-login {
+    width: 80%; /* Make the button full width */
+  }
+
+  .forgot-password {
+    font-size: 12px; /* Adjust font size for mobile */
+  }
+
+    /* Adjust the width of the form fields */
+    mat-form-field {
+      width: 80%; /* Set to a smaller width */
+      margin: 0 auto 16px; /* Center the fields with auto margins */
+    }
+  
+  
+}
