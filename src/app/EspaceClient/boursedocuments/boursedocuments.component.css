@@ -1,98 +1,79 @@
 .table-container {
-    width: 60%; /* Adjust as needed */
-    margin: 0 auto; /* Centers the container */
+    width: 100%; /* Full width on smaller screens */
+    max-width: 60%; /* Capped width for larger screens */
+    margin: 0 auto;
     padding: 20px;
     text-align: center;
+    overflow-x: auto; /* Enables horizontal scrolling on small screens */
+    
 }
 
 .table-title {
     margin-bottom: 20px;
-    font-size: 1.8rem; /* Adjust font size for the title */
-    color: #000; /* Title color */
+    font-size: 1.8rem; /* Title font size */
+    color: #000;
 }
 
 .styled-table {
     width: 100%;
-    border-collapse: collapse; /* Ensures borders are collapsed */
-    border: 1px solid #aaa; /* Outer border for the table */
+    border-collapse: collapse;
+    border: 1px solid #aaa;
 }
 
 .styled-table th, .styled-table td {
-    padding: 10px; /* Cell padding */
-    border-right: 1px solid #ddd; /* Border between columns */
+    padding: 10px;
+    border-right: 1px solid #ddd;
 }
 
 .styled-table th {
-    background-color: #f2f2f2; /* Light gray background for headers */
-    color: #333; /* Text color for headers */
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 .styled-table td {
-    vertical-align: middle; /* Aligns text vertically in cells */
+    vertical-align: middle;
 }
 
-/* Specific styles for 'Disponibilité' column */
-.styled-table .mat-column-disponibility {
-    width: 150px; /* Adjust width for 'Disponibilité' column */
-    text-align: center; /* Center-align text in 'Disponibilité' column */
+/* 'Disponibilité' and 'Date Limite' columns */
+.styled-table .mat-column-disponibility,
+.styled-table .mat-column-deadline {
+    width: 150px;
+    text-align: center;
 }
 
-.styled-table .mat-column-disponibility th, .styled-table .mat-column-disponibility td {
-    text-align: center; /* Center-align header and content */
-}
-
-/* Remove the right border from the last column to avoid extra border on the right edge */
+/* Remove right border from last column */
 .styled-table th:last-child, .styled-table td:last-child {
     border-right: none;
 }
 
 .custom-check-icon {
-    color: #197330; /* Custom green color for the check circle */
-}
-
-
-/* Specific styles for 'Date Limite' column */
-.styled-table .mat-column-deadline {
-    width: 150px; /* Adjust width for 'Date Limite' column */
-    text-align: center; /* Center-align text in 'Date Limite' column */
-}
-
-.styled-table .mat-column-deadline th, .styled-table .mat-column-deadline td {
-    text-align: center; /* Center-align header and content */
+    color: #197330;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .table-container {
-        padding-bottom: 75px; 
-    }
-    
-    .styled-table th, .styled-table td {
-        font-size: 0.55rem; /* Smaller font size for better readability on small screens */
-        padding: 12px; /* Adjust padding for smaller screens */
-    }
-    
-    .table-title {
-        font-size: 1rem; /* Smaller title font size on mobile */
+
+        .table-container {
+        width: 100%;
+        padding: 0; /* Removes extra padding on small screens */
+        padding-bottom: 75px;
+        max-width: 98%; /* Removes max-width to allow full expansion */
+        text-align: left; /* Aligns the table to the left edge */
     }
 
-    .table-container {
-        width: 90%; /* Allow the table container to take full width on small screens */
+
+    .table-title {
+        font-size: 1rem; /* Adjusted title font size */
+    }
+
+    .styled-table th, .styled-table td {
+        font-size: 0.75rem; /* Smaller font for readability */
+        padding: 8px; /* Adjust padding for smaller screens */
     }
 
     .styled-table {
-        display: block; /* Makes table behave like a block element */
-        overflow-x: auto; /* Enables horizontal scrolling */
-        white-space: nowrap; /* Prevents text from wrapping, keeping rows on a single line */
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
-
-.styled-table .mat-column-deadline {
-    width: 80px; /* Adjust width for 'Date Limite' column */
-    text-align: center; /* Center-align text in 'Date Limite' column */
-}
-
-.styled-table .mat-column-disponibility {
-    width: 50px; /* Adjust width for 'Date Limite' column */
-    text-align: center; /* Center-align text in 'Date Limite' column */
-} 
 }
