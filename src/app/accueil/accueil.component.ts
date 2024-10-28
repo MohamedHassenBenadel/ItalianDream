@@ -54,7 +54,40 @@ export class AccueilComponent implements OnInit ,AfterViewInit {
 
 
 
-  ngOnInit() {}
+  deferredPrompt: any;
+
+  ngOnInit() {
+    // Listen for the beforeinstallprompt event
+    window.addEventListener('beforeinstallprompt', (event: Event) => {
+      // Prevent Chrome from showing the default prompt
+      event.preventDefault();
+      // Save the event so it can be triggered later
+      this.deferredPrompt = event;
+      // Show the install button
+      const installButton = document.getElementById('install-button');
+      if (installButton) {
+        installButton.style.display = 'block';
+      }
+    });
+  }
+
+  onInstallClick() {
+    // Show the install prompt
+    if (this.deferredPrompt) {
+      this.deferredPrompt.prompt();
+      // Wait for the user's response
+      this.deferredPrompt.userChoice.then((choiceResult: any) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        // Clear the deferred prompt variable
+        this.deferredPrompt = null;
+      });
+    }
+  }
+
 
 
   startSliding() {

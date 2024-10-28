@@ -48,6 +48,27 @@
 
 }
 
+.install-button {
+    position: absolute;
+    top: 65%; /* Adjust this value to position it below the subtext */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #197330; /* Customize button color */
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif; /* Set font to Times New Roman */
+    font-weight: bold;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2; /* Ensures it appears above other elements */
+    margin-top: 20px;
+
+}
+
+
+
 /* Qui sommes nous Section */
 .description-container {
     background-color: #f4f4f4;
