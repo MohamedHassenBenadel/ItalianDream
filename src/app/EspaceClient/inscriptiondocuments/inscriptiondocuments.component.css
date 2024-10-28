@@ -63,10 +63,16 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .styled-table th, .styled-table td {
-        font-size: 0.5rem; /* Smaller font size for better readability on small screens */
-        padding: 5px; /* Adjust padding for smaller screens */
+
+    .table-container {
+        padding-bottom: 75px; 
     }
+    
+    .styled-table th, .styled-table td {
+        font-size: 0.55rem; /* Smaller font size for better readability on small screens */
+        padding: 12px; /* Adjust padding for smaller screens */
+    }
+
     
     .table-title {
         font-size: 1rem; /* Smaller title font size on mobile */
@@ -74,7 +80,6 @@
 
     .table-container {
         width: 90%; /* Allow the table container to take full width on small screens */
-        padding: 10px; /* Reduce padding on smaller screens */
     }
 
     .styled-table {

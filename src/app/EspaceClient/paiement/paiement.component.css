@@ -75,14 +75,13 @@
       margin: 0 auto; /* Centers the container */
       padding: 20px;
       text-align: center;
-      margin-left: -15px;
+      margin-left: -20px;
     }
 
     .table-title {
-    margin-bottom: 20px;
     font-size: 1.8rem; /* Adjust font size for the title */
     color: #000; /* Title color */
-    margin-bottom: 70px;
+    margin-bottom: 90px;
   }
 
   .styled-table th, .styled-table td {
@@ -100,6 +99,5 @@
       font-size: 20px; /* Smaller size on small screens */
   }
 
-
-  }
+}
   

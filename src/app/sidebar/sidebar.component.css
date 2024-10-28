@@ -25,14 +25,12 @@ mat-sidenav {
   height: auto;
   margin-top: 10px;
   margin-bottom: 50px;
-  margin-left: -3px;
 }
 
 .center-logo {
   display: flex;
   justify-content: center; /* Center the logo horizontally */
   width: 100%; /* Ensure the container takes full width */
-  margin-left: -3px;
 }
 
 .username {
@@ -96,66 +94,69 @@ mat-sidenav {
   color: #f0f0f0 !important;
 }
 
+/* Mobile Toolbar Styles */
+.mobile-toolbar {
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: center; /* Space items evenly */
+  background-color: #F2F2F2; /* Match the sidebar background */
+  padding: 10px 0; /* Vertical padding */
+  position: fixed; /* Fixed position at the bottom */
+  bottom: 0; /* Align to the bottom */
+  width: 100%; /* Full width */
+}
+
+/* Style for active icons in mobile toolbar */
+.active-icon {
+  color: #197330 ; /* Change to your desired color */
+}
+
+
+/* Keep the existing active style for mobile buttons */
+.mobile-toolbar button {
+  padding: 10px; /* Adjust padding to increase button size */
+  font-size: 16px; /* Adjust font size for the icon inside the button */
+  height: 10px; /* Set a specific height for the button */
+  width: 15px; /* Set a specific width for the button */
+  display: flex; /* Ensure icons are centered */
+  justify-content: center; /* Center icons horizontally */
+  align-items: center; /* Center icons vertically */
+}
+
+/* Keep the existing active style for mobile buttons */
+.mobile-toolbar button.active {
+  color: #f2f2f2 !important; /* Text color for active button */
+}
+
+.disconnect-mobile {
+  text-align: center;
+  padding: 0 10px; /* Adjust horizontal padding to decrease space on the right */
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  
-
   .sidenav-container {
     overflow: hidden; /* Prevent overflow */
     position: fixed;
     width: 100%; /* Ensure full width on mobile */
     height: 100%; /* Ensure full height on mobile */
-    overflow-x: hidden;
   }
 
   mat-sidenav {
-    width: 40px; /* Smaller width for mobile */
-    }
-
-    .sidenav-container, .sidebar-content {
-      width: 100%;
-      overflow-x: hidden;
-    }
-  
-
-  .sidebar-logo {
-    width: 40px;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    margin-left: 7px;
-  }
-  
-  .username {
-    display: none; /* Hide username text */
+    display: none; /* Hide sidebar on mobile */
   }
 
-  .sidebar-item {
-    justify-content: center; /* Center icons */
-    text-align: center; /* Center the text */
+  .mobile-toolbar {
+    display: flex; /* Show mobile toolbar */
   }
 
-  .sidebar-item span {
-    display: none !important; /* Hide text in sidebar items */
+  .sidebar-content {
+    display: none; /* Hide sidebar content on mobile */
   }
 
-  .sidebar-item mat-icon {
-    font-size: 16px; /* Adjust icon size for smaller screens */
+  .mat-mdc-form-field-focus-overlay {
+    background-color: transparent;
   }
-  
-  .disconnect-button span {
-    display: none !important; /* Hide text in sidebar items */
-
-  }  
-  .disconnect-button mat-icon {
-    font-size: 16px; 
-  }
-  
-  .disconnect-button {
-    justify-content: center; /* Center icon in disconnect button */
-    padding: 0px;
-  }
-
+    
 
 }

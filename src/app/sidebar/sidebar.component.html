@@ -47,5 +47,32 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
+
+    <!-- Mobile Toolbar (hidden on larger screens) -->
+    <div class="mobile-toolbar" *ngIf="isMobile">
+      <button mat-button (click)="redirectTo('/dashboard/profile')"
+        [ngClass]="{'active': isActiveRoute('/dashboard/profile')}">
+        <mat-icon [ngClass]="{'active-icon': isActiveRoute('/dashboard/profile')}">person_outline</mat-icon>
+      </button>
+      <button mat-button (click)="redirectTo('/dashboard/niveau')"
+        [ngClass]="{'active': isActiveRoute('/dashboard/niveau')}">
+        <mat-icon [ngClass]="{'active-icon': isActiveRoute('/dashboard/niveau')}">language</mat-icon>
+      </button>
+      <button mat-button (click)="redirectTo('/dashboard/documents')"
+        [ngClass]="{'active': isActiveRoute('/dashboard/documents')}">
+        <mat-icon [ngClass]="{'active-icon': isActiveRoute('/dashboard/documents')}">description</mat-icon>
+      </button>
+      <button mat-button (click)="redirectTo('/dashboard/paiement')"
+        [ngClass]="{'active': isActiveRoute('/dashboard/paiement')}">
+        <mat-icon [ngClass]="{'active-icon': isActiveRoute('/dashboard/paiement')}">payment</mat-icon>
+      </button>
+      <button mat-button (click)="redirectTo('/dashboard/orientation')"
+        [ngClass]="{'active': isActiveRoute('/dashboard/orientation')}">
+        <mat-icon [ngClass]="{'active-icon': isActiveRoute('/dashboard/orientation')}">school</mat-icon>
+      </button>
+      <button mat-button (click)="redirectTo('/login')" class="disconnect-mobile">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

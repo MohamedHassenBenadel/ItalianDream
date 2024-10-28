@@ -200,7 +200,7 @@
     }
     
     .card {
-        margin-left: -15px;
+        margin-left: -25px;
         margin-bottom: 15px;
         width: 100%; /* Adjust width for mobile */
         padding: 20px;
@@ -241,4 +241,9 @@
     .submit-password-btn {
         padding: 8px; /* Smaller padding for mobile */
     }
+
+    .profile-container {
+        padding-bottom: 50px; 
+    }
+
 }
