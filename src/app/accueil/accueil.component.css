@@ -58,7 +58,7 @@
     background-color: #197330; /* Customize button color */
     color: #ffffff;
     font-size: 14px;
-    font-family: "Times New Roman", Times, serif; /* Set font to Times New Roman */
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     padding: 8px 20px;
     border: none;
@@ -316,7 +316,7 @@
     }
 
     .install-button {
-        font-size: 18px; /* Fixed size for larger screens */
+        font-size: 12px; /* Fixed size for larger screens */
         padding: 10px 20px; /* Fixed padding for larger screens */
     }
 
