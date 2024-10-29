@@ -1,17 +1,35 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
-
+import { ClientServiceService } from '../ApiServices/client-service.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
-  constructor(private router: Router) {}
+  loginForm: FormGroup;
+  errorMessage: string | null = null; // Property to hold error message
 
+  constructor(
+    private router: Router,
+    private clientService: ClientServiceService,
+    private fb: FormBuilder
+  ) {
+    // Initialize form with validators
+    this.loginForm = this.fb.group({
+      clientId: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+
+  ngOnInit() {
+    localStorage.clear();
+  }
+  
   redirectTo(route: string) {
     this.router.navigate([route]);
   }
@@ -45,5 +63,29 @@ export class LoginComponent {
       image.style.transform = `translate(${translateX}px, ${translateY}px)`;
     }
   }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+      const { clientId, password } = this.loginForm.value;
+      this.clientService.login(clientId, password).subscribe({
+        next: (response) => {
+
+          console.log('Login successful:', response);
+          this.redirectTo('/dashboard');
+        },
+        error: (error) => {
+          if (error.status === 401) {
+            this.errorMessage = 'Mot de passe incorrect';
+          } else if (error.status === 404) {
+            this.errorMessage = "L'identifiant du client n'existe pas";
+          } else {
+            this.errorMessage = 'Une erreur inattendue est survenue';
+          }
+        }
+      });
+  
+    }
+  }
+
 
 }

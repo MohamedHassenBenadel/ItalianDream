@@ -71,6 +71,7 @@ import { ManagePaymentComponent } from './Admin/manage-payment/manage-payment.co
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ConfirmDialogContent } from './sidebar/sidebar.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -129,6 +130,7 @@ import { ConfirmDialogContent } from './sidebar/sidebar.component';
     MatPaginatorModule,
     MatDialogModule,
     MatCheckboxModule,
+    HttpClientModule, 
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

@@ -8,20 +8,25 @@
     <mat-card class="login-card">
       <mat-card-content>
         <h1 class="login-title">Connexion</h1>
-        <form class="login-form" autocomplete="off">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form" autocomplete="off">
           <mat-form-field appearance="fill">
             <mat-label>Id Client</mat-label>
             <mat-icon matPrefix>person</mat-icon>
-            <input matInput autocomplete="off">
+            <input matInput formControlName="clientId" autocomplete="off">
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
             <mat-icon matPrefix>key</mat-icon>
-            <input matInput type="password" autocomplete="new-password">
+            <input matInput type="password" formControlName="password" autocomplete="new-password">
           </mat-form-field>
 
-          <button mat-raised-button class="button-login" (click)="redirectTo('/dashboard')">Se connecter</button>
+          <button mat-raised-button class="button-login" type="submit">Se connecter</button>
+
+          <!-- Display error message if it exists -->
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
 
           <span class="forgot-password" (click)="redirectTo('/verifyemail')">Mot de passe oublié?</span>
         </form>

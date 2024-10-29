@@ -107,6 +107,13 @@ mat-form-field {
   text-decoration-color: #555555;
 }
 
+.error-message {
+  color: #ED4965; /* Or any color you prefer */
+  font-size: 18px;
+  margin-top: 10px; /* Add some space between the button and error message */
+}
+
+
 /* Hide parallax image and adjust form styles for mobile */
 @media (max-width: 600px) { /* Adjust the max-width as needed */
   .parallax-image {

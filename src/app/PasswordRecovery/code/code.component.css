@@ -113,6 +113,13 @@
     cursor: pointer;
 }
 
+.error-message {
+    color: #ED4965; /* Change color to your preference */
+    margin: 10px; /* Space above the error message */
+    font-size: 18px;
+  }
+  
+
 @media (max-width: 768px) {
     /* Remove card styling on smaller screens */
     .card {

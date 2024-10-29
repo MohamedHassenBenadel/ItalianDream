@@ -90,6 +90,13 @@ mat-error {
   margin-top: -20px;
 }
 
+.error-message {
+  color: #ED4965; /* Change color to your preference */
+  margin: 10px; /* Space above the error message */
+  font-size: 18px;
+}
+
+
 @media (max-width: 768px) {
   .verify-email-card {
     background-color: transparent !important; /* Ensure background is transparent */

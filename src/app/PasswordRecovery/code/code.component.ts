@@ -1,19 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ClientServiceService } from '../../ApiServices/client-service.service'; // Import your service
 
 @Component({
   selector: 'app-code',
   templateUrl: './code.component.html',
   styleUrl: './code.component.css'
 })
-export class CodeComponent {
-  constructor(private router : Router){}
+export class CodeComponent implements OnInit {
+  constructor(private router: Router, private clientService: ClientServiceService) {}
+  email: string | null = null; // To store the email from local storage
   otp1: string = '';
   otp2: string = '';
   otp3: string = '';
   otp4: string = '';
+  errorMessage: string | null = null; // Variable to hold error messages
 
-  private correctOtp: string = '1234'; // Example code, change as needed
+
+  ngOnInit(): void {
+    this.email = localStorage.getItem('userEmail'); // Get the email from local storage
+  }
+
+
 
   moveToNext(event: Event, index: number) {
     const input = event.target as HTMLInputElement;
@@ -28,11 +36,19 @@ export class CodeComponent {
 
   validateOtp(): void {
     const enteredOtp = this.otp1 + this.otp2 + this.otp3 + this.otp4;
-    if (enteredOtp === this.correctOtp) {
-      console.log('Code correct!'); // Log success
-      this.router.navigate(['/newpassword']);
+    if (this.email) {
+      this.clientService.verifyClientByCode(this.email, parseInt(enteredOtp, 10)).subscribe(
+        response => {
+          console.log('Code correct!'); // Log success
+          this.router.navigate(['/newpassword']); // Redirect to the new password page
+        },
+        error => {
+          this.errorMessage = 'Le code que vous avez entré est incorrect.'; // Set error message in French
+          console.log('Code incorrect!'); // Log failure
+        }
+      );
     } else {
-      console.log('Code incorrect!'); // Log failure
+      this.errorMessage = 'L\'adresse e-mail n\'est pas disponible.'; // Handle case if email is not found
     }
   }
 

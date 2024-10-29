@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ClientServiceService } from '../../ApiServices/client-service.service';
+
 
 @Component({
   selector: 'app-newpassword',
@@ -9,8 +12,10 @@ import { Router } from '@angular/router';
 export class NewpasswordComponent {
   newPassword: string = '';
   confirmPassword: string = '';
+  email: string | null = localStorage.getItem('userEmail'); // Get the email from local storage
 
-  constructor(private router : Router){}
+
+  constructor(private router: Router, private snackBar: MatSnackBar, private clientService: ClientServiceService) {}
 
   // Method to handle the form submission
   onSubmit() {
@@ -18,9 +23,19 @@ export class NewpasswordComponent {
       alert('Passwords do not match!');
       return;
     }
-    // Perform the logic you need here (e.g., call a service to update the password)
-    console.log('New Password:', this.newPassword);
-    this.router.navigate(['/login']);
+
+    // Call the reset password service method
+    this.clientService.resetPassword(this.email!, this.newPassword).subscribe(
+      response => {
+        // Show success notification
+        this.snackBar.open('Mot de passe modifié avec succès!', 'Fermer', {
+          duration: 3000,
+          panelClass: ['success-snackbar']
+        });
+        localStorage.clear();
+        this.router.navigate(['/login']);
+      }
+    );
   }
 
   redirectTo(route: string) {

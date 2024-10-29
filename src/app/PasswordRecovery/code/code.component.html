@@ -1,34 +1,34 @@
 <div class="code-container">
-    <mat-card class="card">
-      <div class="icon-container">
-        <img src="../../../assets/email.png" alt="Email Icon" />
-      </div>
-  
-      <h2 class="bold-title">Vérification du code</h2>
-      <p class="description">Veuillez entrer le code que vous avez reçu dans votre adresse email.</p>
-  
-      <div class="otp-container">
-        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp1" (input)="moveToNext($event, 1)">
-        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp2" (input)="moveToNext($event, 2)">
-        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp3" (input)="moveToNext($event, 3)">
-        <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp4" (input)="moveToNext($event, 4)">
-      </div>
+  <mat-card class="card">
+    <div class="icon-container">
+      <img src="../../../assets/email.png" alt="Email Icon" />
+    </div>
 
-      <button mat-button class="valider-btn" (click)="validateOtp()">Valider</button>
+    <h2 class="bold-title">Vérification du code</h2>
+    <p class="description">Veuillez entrer le code que vous avez reçu dans votre adresse email.</p>
 
-  
-      <div class="space"></div>
-  
-      <div class="divider-container">
-        <div class="divider"></div>
-        <span class="or-text">ou</span>
-        <div class="divider"></div>
-      </div>
-  
-      <div class="return-button-container">
-        <button mat-button class="return-btn" class="return-btn" (click)="goBack()">Retour à la connexion</button>
+    <div class="otp-container">
+      <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp1" (input)="moveToNext($event, 1)">
+      <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp2" (input)="moveToNext($event, 2)">
+      <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp3" (input)="moveToNext($event, 3)">
+      <input type="text" maxlength="1" class="otp-input" [(ngModel)]="otp4" (input)="moveToNext($event, 4)">
+    </div>
 
-      </div>
-    </mat-card>
-  </div>
-  
+    <button mat-button class="valider-btn" (click)="validateOtp()">Valider</button>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+
+    <div class="space"></div>
+
+    <div class="divider-container">
+      <div class="divider"></div>
+      <span class="or-text">ou</span>
+      <div class="divider"></div>
+    </div>
+
+    <div class="return-button-container">
+      <button mat-button class="return-btn" class="return-btn" (click)="goBack()">Retour à la connexion</button>
+
+    </div>
+  </mat-card>
+</div>
