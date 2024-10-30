@@ -67,13 +67,24 @@ export class LoginComponent implements OnInit{
   onSubmit() {
     if (this.loginForm.valid) {
       const { clientId, password } = this.loginForm.value;
+      
       this.clientService.login(clientId, password).subscribe({
         next: (response) => {
           this.clientService.getClientProfile(clientId).subscribe({
             next: (clientProfile) => {
-              // Store the entire client object in local storage
-              localStorage.setItem('client', JSON.stringify(clientProfile));
-              this.redirectTo('/dashboard');
+              if (clientProfile.banned) {
+                this.errorMessage = 'Veuillez payer pour avoir l\'accès à ton compte';
+              } else {
+                // Store the entire client object in local storage
+                localStorage.setItem('client', JSON.stringify(clientProfile));
+                
+                // Redirect based on client type
+                if (clientProfile.type === 'Admin') {
+                  this.redirectTo('/admindashboard');
+                } else {
+                  this.redirectTo('/dashboard');
+                }
+              }
             },
             error: (error) => {
               this.errorMessage = 'Unable to fetch client profile'; // Handle profile fetch error
@@ -90,9 +101,8 @@ export class LoginComponent implements OnInit{
           }
         }
       });
-  
     }
   }
-
+  
 
 }

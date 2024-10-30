@@ -1,101 +1,119 @@
 <div class="back-button-container">
-    <button mat-button (click)="goBack()">
-      <mat-icon>arrow_back</mat-icon> Back
-    </button>
-  </div>
-  
-  <div class="user-table-container">
-    <h2 class="table-title">Gérer les Paiements</h2>
-  
-    <mat-form-field appearance="fill" class="search-bar">
-      <mat-label>Search User</mat-label>
-      <mat-icon matPrefix>search</mat-icon>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Search for users">
-    </mat-form-field>
-  
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <!-- User columns -->
-      <ng-container matColumnDef="firstName">
-        <th mat-header-cell *matHeaderCellDef> First Name </th>
-        <td mat-cell *matCellDef="let user"> {{ user.firstName }} </td>
-      </ng-container>
-      <ng-container matColumnDef="lastName">
-        <th mat-header-cell *matHeaderCellDef> Last Name </th>
-        <td mat-cell *matCellDef="let user"> {{ user.lastName }} </td>
-      </ng-container>
-      <ng-container matColumnDef="cin">
-        <th mat-header-cell *matHeaderCellDef> CIN </th>
-        <td mat-cell *matCellDef="let user"> {{ user.cin }} </td>
-      </ng-container>
-      <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef> Email </th>
-        <td mat-cell *matCellDef="let user"> {{ user.email }} </td>
-      </ng-container>
-      <ng-container matColumnDef="clientId">
-        <th mat-header-cell *matHeaderCellDef> Client ID </th>
-        <td mat-cell *matCellDef="let user"> {{ user.clientId }} </td>
-      </ng-container>
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let user">
-          <button mat-button (click)="openPaymentDialog(user)">
-            Gérer Paiement
-          </button>
+  <button mat-button (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon> Back
+  </button>
+</div>
+
+<div class="user-table-container">
+  <h2 class="table-title">Gérer les Paiements</h2>
+
+  <!-- Search Bar -->
+  <mat-form-field appearance="fill" class="search-bar">
+    <mat-label>Search User</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search for users">
+  </mat-form-field>
+
+  <!-- User Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- User columns -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let user"> {{ user.prenom }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let user"> {{ user.nom }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cin">
+      <th mat-header-cell *matHeaderCellDef> CIN </th>
+      <td mat-cell *matCellDef="let user"> {{ user.cin }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let user"> {{ user.email }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="clientId">
+      <th mat-header-cell *matHeaderCellDef> Client ID </th>
+      <td mat-cell *matCellDef="let user"> {{ user.clientId }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let user">
+        <button mat-button (click)="openPaymentDialog(user)">
+          Gérer Paiement
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Paginator -->
+  <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<!-- Payment Dialog Template -->
+<ng-template #paymentDialog>
+  <h2 mat-dialog-title class="dialog-title">
+    Gérer les Paiements pour {{ selectedUser.prenom }} {{ selectedUser.nom }}
+  </h2>
+  <mat-dialog-content>
+    <table mat-table [dataSource]="paymentDataSource" class="mat-elevation-z8">
+      <!-- Payment columns -->
+      <ng-container matColumnDef="tranche">
+        <th mat-header-cell *matHeaderCellDef> Tranche </th>
+        <td mat-cell *matCellDef="let payment">
+          {{ payment.nom }}
+          <!-- Keep this static -->
         </td>
       </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <ng-container matColumnDef="paid">
+        <th mat-header-cell *matHeaderCellDef> Paid </th>
+        <td mat-cell *matCellDef="let payment">
+          <mat-checkbox [(ngModel)]="payment.paid"></mat-checkbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="montantPaye">
+        <th mat-header-cell *matHeaderCellDef> Montant Payé </th>
+        <td mat-cell *matCellDef="let payment">
+          <input matInput [(ngModel)]="payment.montantPaye" placeholder="Montant Payé" />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="montantRestant">
+        <th mat-header-cell *matHeaderCellDef> Montant Restant </th>
+        <td mat-cell *matCellDef="let payment">
+          <input matInput [(ngModel)]="payment.montantRestant" placeholder="Montant Restant" />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="montantTotal">
+        <th mat-header-cell *matHeaderCellDef> Montant Total </th>
+        <td mat-cell *matCellDef="let payment">
+          <span>{{ payment.montant }}</span> <!-- Display the total amount as static text -->
+        </td>
+      </ng-container>
+
+      <!-- Payment Table Header and Row Definitions -->
+      <tr mat-header-row *matHeaderRowDef="['tranche', 'paid', 'montantPaye', 'montantRestant', 'montantTotal']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['tranche', 'paid', 'montantPaye', 'montantRestant', 'montantTotal'];">
+      </tr>
     </table>
-  
-    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
-  </div>
-  
-  <!-- Payment Dialog Template -->
-  <ng-template #paymentDialog>
-    <h2 mat-dialog-title class="dialog-title">Gérer les Paiements pour {{ selectedUser.firstName }} {{ selectedUser.lastName }}</h2>
-    <mat-dialog-content>
-      <table mat-table [dataSource]="paymentDataSource" class="mat-elevation-z8">
-  
-        <!-- Tranche Column -->
-        <ng-container matColumnDef="tranche">
-          <th mat-header-cell *matHeaderCellDef> Tranche </th>
-          <td mat-cell *matCellDef="let payment"> {{ payment.tranche }} </td>
-        </ng-container>
-  
-        <!-- Paid Column -->
-        <ng-container matColumnDef="paid">
-          <th mat-header-cell *matHeaderCellDef> Payé </th>
-          <td mat-cell *matCellDef="let payment">
-            <mat-checkbox [(ngModel)]="payment.paid"></mat-checkbox>
-          </td>
-        </ng-container>
-  
-        <!-- Montant Payé Column -->
-        <ng-container matColumnDef="montantPaye">
-          <th mat-header-cell *matHeaderCellDef> Montant Payé </th>
-          <td mat-cell *matCellDef="let payment">
-            <input matInput type="number" [(ngModel)]="payment.montantPaye" placeholder="Montant Payé">
-          </td>
-        </ng-container>
-  
-        <!-- Montant Restant Column -->
-        <ng-container matColumnDef="montantRestant">
-          <th mat-header-cell *matHeaderCellDef> Montant Restant </th>
-          <td mat-cell *matCellDef="let payment">
-            <input matInput type="number" [(ngModel)]="payment.montantRestant" placeholder="Montant Restant">
-          </td>
-        </ng-container>
-  
-        <tr mat-header-row *matHeaderRowDef="paymentDisplayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: paymentDisplayedColumns;"></tr>
-      </table>
-    </mat-dialog-content>
-    <mat-dialog-actions class="button-group">
-      <div style="margin-left:auto;">
-        <button mat-button (click)="closeDialog()">Annuler</button>
-        <button mat-button color="primary" (click)="onSavePayment()">Enregistrer</button>
-      </div>
-    </mat-dialog-actions>
-  </ng-template>
-  
+  </mat-dialog-content>
+  <mat-dialog-actions class="button-group">
+    <div style="margin-left: auto;">
+      <button mat-button (click)="closeDialog()">Annuler</button>
+      <button mat-button color="primary" (click)="onSavePayment()">Enregistrer</button>
+    </div>
+  </mat-dialog-actions>
+</ng-template>
