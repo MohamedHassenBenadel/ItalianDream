@@ -1,87 +1,79 @@
-<!-- Background image -->
-<div class="background">
-    <img src="../../../assets/profile-bgimage.jpeg" class="bg-image" alt="Background Image">
-</div>
-
 <!-- Main Profile Container -->
 <div class="profile-container">
-    <!-- User image in the middle -->
-    <div class="user-image">
-        <img src="../../../assets/user.jpeg" alt="User Image" class="profile-pic">
+  <!-- User image in the middle -->
+  <div class="user-image">
+    <img src="../../../assets/user.jpeg" alt="User Image" class="profile-pic">
+  </div>
+
+  <!-- Two-column card layout -->
+  <div class="user-info">
+    <!-- Left side in a card -->
+    <div class="left-card card">
+      <h3>Personal Information</h3>
+      <div class="info-section">
+        <div class="info-row">
+          <span class="label">Nom & Prénom:</span>
+          <span class="info-text">{{ clientData.prenom }} {{ clientData.nom }}</span> <!-- Updated -->
+        </div>
+        <div class="info-row">
+          <span class="label">Age:</span>
+          <span class="info-text">{{ clientData.age }}</span> <!-- Updated -->
+        </div>
+        <div class="info-row">
+          <span class="label">Niveau d'étude:</span>
+          <span class="info-text">{{ clientData.education }}</span> <!-- Updated -->
+        </div>
+        <div class="info-row">
+          <span class="label">Orientation:</span>
+          <span class="info-text">{{ clientData.orientation }}</span> <!-- Updated -->
+        </div>
+        <div class="info-row">
+          <span class="label">Email:</span>
+          <span class="info-text">{{ clientData.email }}</span> <!-- Updated -->
+        </div>
+      </div>
     </div>
 
-    <!-- Two-column card layout -->
-    <div class="user-info">
-        <!-- Left side in a card -->
-        <div class="left-card card">
-            <h3>Personal Information</h3>
-            <div class="info-section">
-                <div class="info-row">
-                    <span class="label">Nom & Prénom:</span>
-                    <span class="info-text">John Doe</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Age:</span>
-                    <span class="info-text">28</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Niveau d'étude:</span>
-                    <span class="info-text">Master</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Orientation:</span>
-                    <span class="info-text">Software Engineering</span>
-                </div>
-
-                <div class="info-row">
-                    <span class="label">Email:</span>
-                    <span class="info-text">HassenBenadel&#64;gmail.com</span>
-                </div>
-
-            </div>
+    <!-- Right side in a card -->
+    <div class="right-card card">
+      <h3>Account Information</h3>
+      <div class="info-section">
+        <div class="info-row">
+          <span class="label">Client ID:</span>
+          <span class="info-text">{{ clientData.clientId }}</span> <!-- Updated -->
         </div>
 
-        <!-- Right side in a card -->
-        <div class="right-card card">
-            <h3>Account Information</h3>
-            <div class="info-section">
-                <div class="info-row">
-                    <span class="label">Client ID:</span>
-                    <span class="info-text">213JMt88893</span>
-                </div>
-
-                <!-- Trigger to open the modal -->
-                <div class="info-row password-row">
-                    <span class="label">Password:</span>
-                    <span class="info-text">
-                        <a class="change-password-link" (click)="openPasswordChangeModal()">Modifier votre mot de passe</a>
-                    </span>
-                </div>
-            </div>
+        <!-- Trigger to open the modal -->
+        <div class="info-row password-row">
+          <span class="label">Password:</span>
+          <span class="info-text">
+            <a class="change-password-link" (click)="openPasswordChangeModal()">Modifier votre mot de passe</a>
+          </span>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
-<!-- Password Change Modal -->
 <ng-template #ChangePasswordDialog let-dialogRef="dialogRef">
-    <div class="password-modal">
-        <h2>Modifier votre mot de passe</h2>
-        <form [formGroup]="passwordForm" (ngSubmit)="submitNewPassword()">
-            <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Nouveau mot de passe</mat-label>
-                <input matInput type="password" formControlName="newPassword" required>
-            </mat-form-field>
+  <div class="password-modal">
+    <h2>Modifier votre mot de passe</h2>
+    <form [formGroup]="passwordForm" (ngSubmit)="submitNewPassword()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nouveau mot de passe</mat-label>
+        <input matInput type="password" formControlName="newPassword" required>
+      </mat-form-field>
 
-            <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Confirmer votre nouveau mot de passe</mat-label>
-                <input matInput type="password" formControlName="confirmPassword" required>
-            </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Confirmer votre nouveau mot de passe</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" required>
+      </mat-form-field>
 
-            <div class="modal-actions">
-                <button mat-raised-button type="submit" [disabled]="passwordForm.invalid" class="submit-button">Modifier</button>
-                <button mat-button type="button" (click)="dialogRef.close()">Annuler</button>
-            </div>
-        </form>
-    </div>
+      <div class="modal-actions">
+        <button mat-raised-button type="submit" [disabled]="passwordForm.invalid"
+          class="submit-button">Modifier</button>
+        <button mat-button type="button" (click)="dialogRef.close()">Annuler</button>
+      </div>
+    </form>
+  </div>
 </ng-template>
-    

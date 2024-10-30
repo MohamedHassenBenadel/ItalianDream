@@ -51,5 +51,28 @@ resetPassword(email: string, password: string): Observable<any> {
 }
 
 
+//Profile: 
+
+//Get client data for profile display 
+
+getClientProfile(clientId: string): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/profile`, {
+    params: { clientId: clientId }, // Pass clientId as a query parameter
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  });
+}
+
+changePassword(clientId: string, newPassword: string): Observable<any> {
+  return this.http.put<any>(`${this.apiUrl}/change-password`, null, {
+    params: { clientId, password: newPassword },
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  });
+}
+
+
 
 }

@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 
+interface BourseDocument {
+  document: string;
+  disponibility: string;
+  deadline: string; 
+}
+
 
 @Component({
   selector: 'app-boursedocuments',
@@ -9,11 +15,12 @@ import { Location } from '@angular/common';
 })
 export class BoursedocumentsComponent {
   displayedColumns: string[] = ['document', 'disponibility','deadline'];
-  dataSource = ELEMENT_DATA;
+  dataSource: BourseDocument[] = [];
 
   constructor(private location: Location) {}
 
   ngOnInit(): void {
+    this.loadDocuments();
   }
 
   goBack(): void {
@@ -21,62 +28,22 @@ export class BoursedocumentsComponent {
   }
 
 
+  loadDocuments(): void {
+    const clientData = localStorage.getItem('client');
+    if (clientData) {
+      const client = JSON.parse(clientData);
+      const visaDocuments = client.documentsBourse;
+  
+      // Build the data source based on the visa documents
+      this.dataSource = Object.keys(visaDocuments)
+        .filter(key => key.startsWith('doc') && !key.includes('DueDate')) // Only include doc keys, excluding DueDate
+        .map(key => ({
+          document: key,  // Using the key (e.g., "doc1", "doc2", "doc3")
+          disponibility: visaDocuments[key] ? 'Available' : 'Not Available',  // Availability
+          deadline: visaDocuments[`${key}DueDate`] // Corresponding due date
+        }));
+    }
+  }
+
 }
 
-const ELEMENT_DATA = [
-  { 
-    document: 'التصريح بالضريبة على الدخل السنوي', 
-    disponibility: 'Not Available',
-    deadline: '2024-10-01'  // Example deadline
-  },
-  { 
-    document: 'شهادة حياة جماعية', 
-    disponibility: 'Not Available',
-    deadline: '2024-10-07'  // Example deadline
-  },
-  { 
-    document: 'شهادة في عدم الملكية', 
-    disponibility: 'Not Available',
-    deadline: '2024-10-10'  // Example deadline
-  },
-  { 
-    document: 'Historique CNSS / Affiliation CNRPS', 
-    disponibility: 'Not Available',
-    deadline: '2024-10-15'  // Example deadline
-  },
-  { 
-    document: '6 Derniers extrait bancaire', 
-    disponibility: 'Available',
-    deadline: '2024-09-30'  // Example deadline
-  },
-  { 
-    document: 'Attestation de retraite', 
-    disponibility: 'Available',
-    deadline: '2024-09-28'  // Example deadline
-  },
-  { 
-    document: 'Attesation de prise en charge', 
-    disponibility: 'Available',
-    deadline: '2024-10-05'  // Example deadline
-  },
-  { 
-    document: 'Extrait de naissance francais', 
-    disponibility: 'Available',
-    deadline: '2024-09-25'  // Example deadline
-  },
-  { 
-    document: 'recu postale', 
-    disponibility: 'Available',
-    deadline: '2024-10-01'  // Example deadline
-  },
-  { 
-    document: 'Deux photos', 
-    disponibility: 'Available',
-    deadline: '2024-09-20'  // Example deadline
-  },
-  { 
-    document: 'Compte bloqué', 
-    disponibility: 'Available',
-    deadline: '2024-10-10'  // Example deadline
-  },
-];

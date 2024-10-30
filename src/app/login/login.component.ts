@@ -69,9 +69,16 @@ export class LoginComponent implements OnInit{
       const { clientId, password } = this.loginForm.value;
       this.clientService.login(clientId, password).subscribe({
         next: (response) => {
-
-          console.log('Login successful:', response);
-          this.redirectTo('/dashboard');
+          this.clientService.getClientProfile(clientId).subscribe({
+            next: (clientProfile) => {
+              // Store the entire client object in local storage
+              localStorage.setItem('client', JSON.stringify(clientProfile));
+              this.redirectTo('/dashboard');
+            },
+            error: (error) => {
+              this.errorMessage = 'Unable to fetch client profile'; // Handle profile fetch error
+            }
+          });
         },
         error: (error) => {
           if (error.status === 401) {
