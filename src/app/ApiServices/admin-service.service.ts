@@ -91,6 +91,18 @@ export class AdminServiceService {
     return this.http.put<any>(url, payments, { headers });
   }
 
+
+  banClient(clientId: string): Observable<any> {
+    const url = `${this.baseUrl}/ban-client?clientId=${clientId}`;
+    return this.http.put<any>(url, null, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+  }
+
+  // Unban client
+  unbanClient(clientId: string): Observable<any> {
+    const url = `${this.baseUrl}/unban-client?clientId=${clientId}`;
+    return this.http.put<any>(url, null, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+  }
+
   
 
 }

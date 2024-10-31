@@ -128,7 +128,26 @@
 .submit-button:hover {
     background-color: #C8102E;
 }
-
+.spinner-border {
+    margin-left: 8px;
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border: 0.2em solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+  }
+  
+  @keyframes spinner-border {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
 /* Responsive Design */
 @media (max-width: 768px) {
     .map-and-form {

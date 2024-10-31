@@ -43,11 +43,11 @@ export class AddclientComponent implements OnInit {
     const lastName = this.clientForm.get('lastName')?.value;
 
     if (cin && firstName && lastName) {
-      const firstThreeCin = cin.substring(0, 3);
-      const firstTwoFirstName = firstName.substring(0, 2).toUpperCase();
-      const firstTwoLastName = lastName.substring(0, 2).toUpperCase();
+      const firstThreeCin = cin.substring(0, 4);
+      const firstTwoFirstName = firstName.substring(0, 3).toUpperCase();
+      const firstTwoLastName = lastName.substring(0, 3).toUpperCase();
       const timestamp = Date.now().toString(); 
-      const timestampPart = timestamp.substring(0, 5); 
+      const timestampPart = timestamp.slice(-5); // Get the last 5 characters
       const clientId = `${firstThreeCin}${firstTwoFirstName}${firstTwoLastName}${timestampPart}`;
       this.clientForm.patchValue({ clientId }); 
     }

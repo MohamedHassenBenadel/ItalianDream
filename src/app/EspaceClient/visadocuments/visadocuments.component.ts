@@ -37,7 +37,7 @@ export class VisadocumentsComponent {
     const clientData = localStorage.getItem('client');
     if (clientData) {
       const client = JSON.parse(clientData);
-      const visaDocuments = client.documentsUni;
+      const visaDocuments = client.documentsVisa;
   
       this.dataSource = Object.keys(visaDocuments)
         .filter(key => key.startsWith('doc') && !key.includes('DueDate')) 

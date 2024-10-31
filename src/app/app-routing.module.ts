@@ -33,8 +33,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, data: { showNavbar: false, showSidebar: false, showFooter: false } },
   { path: 'accueil', component: AccueilComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'contact', component: ContactComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
+  /*
   { path: 'feedback', component: FeedbackComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
-  { path: 'licence', component: LicenceComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
+  */
+ { path: 'licence', component: LicenceComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'master', component: MasterComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
   { path: 'medecine', component: MedecineComponent, data: { showNavbar: true, showSidebar: false, showFooter: true } },
 

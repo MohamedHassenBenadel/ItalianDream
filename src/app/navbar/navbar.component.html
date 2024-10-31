@@ -41,9 +41,9 @@
 
         <button (click)="redirectTo('/contact')" [ngClass]="{'active': isActive('/contact')}">Contact</button>
 
-
+        <!--
         <button (click)="redirectTo('/feedback')" [ngClass]="{'active': isActive('/feedback')}">Feedback</button>
-
+        -->
 
         <button mat-raised-button class="button-login" (click)="redirectTo('/login')">Espace Client</button>
 
@@ -51,7 +51,8 @@
 
       <!-- Hamburger Icon for Mobile -->
       <div class="hamburger-icon" (click)="toggleMenu()">
-        &#9776; <!-- Hamburger icon (Unicode character) -->
+        &#9776;
+        <!-- Hamburger icon (Unicode character) -->
       </div>
     </div>
   </mat-toolbar-row>

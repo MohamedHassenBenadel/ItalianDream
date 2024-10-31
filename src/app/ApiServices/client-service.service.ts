@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ClientServiceService {
 
   private apiUrl = 'http://localhost:8080/apiclient';
+  private emailApiUrl = 'http://localhost:8080/apiEmail'; 
 
   constructor(private http: HttpClient) {}
 
@@ -67,6 +68,15 @@ getClientProfile(clientId: string): Observable<any> {
 changePassword(clientId: string, newPassword: string): Observable<any> {
   return this.http.put<any>(`${this.apiUrl}/change-password`, null, {
     params: { clientId, password: newPassword },
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  });
+}
+
+sendEmail(sender: string, tel: string, subject: string, body: string): Observable<any> {
+  return this.http.get<any>(`${this.emailApiUrl}/sendemail`, {
+    params: { sender, tel, subject, body }, 
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
