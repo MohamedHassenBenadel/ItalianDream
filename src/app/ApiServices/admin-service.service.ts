@@ -32,12 +32,12 @@ export interface DocumentsVisa {
 
 export interface Paiement {
   paiementId: number;
-  nom: string; // Payment name
-  montant: number; // Total amount
-  montantPaye: number; // Amount paid
-  montantRestant: number; // Remaining amount
-  dateLimite: string; // Due date
-  paid: boolean; // Payment status
+  nom: string; 
+  montant: number; 
+  montantPaye: number; 
+  montantRestant: number; 
+  dateLimite: string; 
+  paid: boolean; 
 }
 
 @Injectable({
@@ -46,7 +46,7 @@ export interface Paiement {
 export class AdminServiceService {
   private baseUrl = 'http://localhost:8080/apiclient'; 
   private baseDocumentUrl = 'http://localhost:8080/apidocuments'; 
-  private basePaymentUrl = 'http://localhost:8080/apiPaiement'; // Add this line for payments API
+  private basePaymentUrl = 'http://localhost:8080/apiPaiement'; 
 
 
 
@@ -63,7 +63,7 @@ export class AdminServiceService {
       return this.http.get<any>(url);
     }
 
-      // Method to update university documents
+  // Method to update university documents
   updateDocumentUni(clientId: string, documents: DocumentsUni): Observable<any> {
     const url = `${this.baseDocumentUrl}/update-doc-uni?client_id=${clientId}`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
